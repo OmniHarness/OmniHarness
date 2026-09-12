@@ -1,0 +1,733 @@
+{
+    "1": {
+        "Modality": "I2I",
+        "Capability Category": "Style Transfer & Repainting",
+        "Workflow Source Code": "1.json",
+        "Workflow Name": "Style_Repainting_With_Text_Overlay",
+        "Workflow Description": "This workflow repaints an input image into a target style and adds specified text to the resulting image.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Generates a stylized image with the specified text while preserving the main content and composition of the source image.",
+        "Dependencies": {
+            "Nodes": "LoadImage, ImageScaleToTotalPixels, GetImageSize, VAEEncode, ReferenceLatent, CLIPLoader, UNETLoader, VAELoader, CLIPTextEncode, ConditioningZeroOut, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, VAEDecode, SaveImage",
+            "Models": "flux-2-klein-9b-fp8.safetensors, qwen_3_8b_fp8mixed.safetensors, full_encoder_small_decoder.safetensors",
+            "Parameters": "megapixels=1, batch_size=1, steps=4+4, cfg=1, sampler=euler, upscale_method=nearest-exact"
+        },
+        "Usage Count": 1,
+        "Success Count": 1,
+        "Reliability Tier": "Provisional"
+    },
+    "2": {
+        "Modality": "I2I",
+        "Capability Category": "Reference-Guided Generation",
+        "Workflow Source Code": "2.json",
+        "Workflow Name": "Pose_Guided_Image_Generation",
+        "Workflow Description": "This workflow generates a new image by using a reference image to guide the pose of the target object.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Generates a new image whose target object follows the pose of the object in the reference image.",
+        "Dependencies": {
+            "Nodes": "LoadImage, ImageScaleToTotalPixels, GetImageSize, VAEEncode, ReferenceLatent, CLIPLoader, UNETLoader, VAELoader, CLIPTextEncode, ConditioningZeroOut, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, VAEDecode, SaveImage",
+            "Models": "flux-2-klein-9b-fp8.safetensors, qwen_3_8b_fp8mixed.safetensors, full_encoder_small_decoder.safetensors",
+            "Parameters": "megapixels=1, batch_size=1, steps=4, cfg=1, sampler=euler, upscale_method=nearest-exact"
+        },
+        "Usage Count": 2,
+        "Success Count": 1,
+        "Reliability Tier": "Provisional"
+    },
+    "3": {
+        "Modality": "I2I",
+        "Capability Category": "Localized Image Editing",
+        "Workflow Source Code": "3.json",
+        "Workflow Name": "Scene_Detail_Replacement",
+        "Workflow Description": "This workflow replaces specified details in an image while preserving the remaining scene content.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Replaces specified scene details while maintaining the surrounding content and visual consistency.",
+        "Dependencies": {
+            "Nodes": "LoadImage, ImageScaleToTotalPixels, GetImageSize, VAEEncode, ReferenceLatent, CLIPLoader, UNETLoader, VAELoader, CLIPTextEncode, ConditioningZeroOut, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, VAEDecode, SaveImage",
+            "Models": "flux-2-klein-9b-fp8.safetensors, qwen_3_8b_fp8mixed.safetensors, full_encoder_small_decoder.safetensors",
+            "Parameters": "megapixels=1, batch_size=1, steps=4, cfg=1, sampler=euler, upscale_method=nearest-exact"
+        },
+        "Usage Count": 7,
+        "Success Count": 7,
+        "Reliability Tier": "Validated"
+    },
+    "4": {
+        "Modality": "T2I",
+        "Capability Category": "In-Image Text Generation",
+        "Workflow Source Code": "4.json",
+        "Workflow Name": "Text_Overlay_Image_Generation",
+        "Workflow Description": "This workflow generates an image from a text prompt and adds specified text to the generated image.",
+        "Preconditions": "A text prompt is provided.",
+        "Expected Effects": "Generates an image containing the specified text while preserving the original visual content.",
+        "Dependencies": {
+            "Nodes": "CLIPLoader, VAELoader, UNETLoader, CLIPTextEncode, ConditioningZeroOut, EmptySD3LatentImage, ModelSamplingAuraFlow, KSampler, VAEDecode, ImageScaleToTotalPixels, GetImageSize, VAEEncode, ReferenceLatent, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, SaveImage",
+            "Models": "qwen_3_4b.safetensors, z_image_turbo_bf16.safetensors, ae.safetensors, qwen_3_8b_fp8mixed.safetensors, flux-2-klein-9b-fp8.safetensors, full_encoder_small_decoder.safetensors",
+            "Parameters": "1024×1024, batch_size=1, shift=3, steps=8/4, cfg=1, sampler=res_multistep/euler, scheduler=simple/Flux2Scheduler, denoise=1, megapixels=1"
+        },
+        "Usage Count": 3,
+        "Success Count": 3,
+        "Reliability Tier": "Validated"
+    },
+    "5": {
+        "Modality": "I2I",
+        "Capability Category": "Style Transfer & Repainting",
+        "Workflow Source Code": "5.json",
+        "Workflow Name": "Style_Repainting_With_Style_Guided_Generation",
+        "Workflow Description": "This workflow repaints an input image into a target style and generates a new image guided by the style of the repainted result.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Produces a repainted image and generates a new image that follows its visual style.",
+        "Dependencies": {
+            "Nodes": "LoadImage, ImageScaleToTotalPixels, GetImageSize, VAEEncode, ReferenceLatent, CLIPLoader, UNETLoader, VAELoader, CLIPTextEncode, ConditioningZeroOut, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, VAEDecode, FluxKontextImageScale, Krea2OstrisEditModelPatch, LoraLoaderModelOnly, TextEncodeKrea2OstrisEdit, FluxKontextMultiReferenceLatentMethod, EmptyLatentImage, KSampler, SaveImage",
+            "Models": "flux-2-klein-9b-fp8.safetensors, qwen_3_8b_fp8mixed.safetensors, full_encoder_small_decoder.safetensors, krea2_turbo_fp8_scaled.safetensors, qwen3vl_4b_fp8_scaled.safetensors, qwen_image_vae.safetensors, krea2_style_reference.safetensors",
+            "Parameters": "megapixels=1, batch_size=1, steps=4+10, cfg=1, sampler=euler, denoise=1, LoRA strength=1, reference_latents_method=index_timestep_zero, upscale_method=nearest-exact"
+        },
+        "Usage Count": 1,
+        "Success Count": 1,
+        "Reliability Tier": "Provisional"
+    },
+    "6": {
+        "Modality": "I2I",
+        "Capability Category": "Localized Image Editing",
+        "Workflow Source Code": "6.json",
+        "Workflow Name": "Localized_Color_Repainting_With_Super_Resolution",
+        "Workflow Description": "This workflow recolors a specified image region and enhances the edited result through high-resolution upscaling.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Repaints the specified region with the target color and produces a higher-resolution image while preserving the remaining visual content.",
+        "Dependencies": {
+            "Nodes": "LoadImage, ImageScaleToTotalPixels, GetImageSize, VAEEncode, ReferenceLatent, CLIPLoader, UNETLoader, VAELoader, CLIPTextEncode, ConditioningZeroOut, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, VAEDecode, UpscaleModelLoader, UltimateSDUpscale, SaveImage",
+            "Models": "flux-2-klein-9b-fp8.safetensors, qwen_3_8b_fp8mixed.safetensors, full_encoder_small_decoder.safetensors, 4x-UltraSharp.pth",
+            "Parameters": "megapixels=1, batch_size=1, steps=4, cfg=1, sampler=euler, upscale_by=2, denoise=0.2, tile_width=1024, tile_height=1024, mask_blur=8, tile_padding=32"
+        },
+        "Usage Count": 1,
+        "Success Count": 1,
+        "Reliability Tier": "Provisional"
+    },
+    "7": {
+        "Modality": "T2I",
+        "Capability Category": "Photorealistic Generation",
+        "Workflow Source Code": "7.json",
+        "Workflow Name": "Photorealistic_Human_Generation",
+        "Workflow Description": "This workflow generates a photorealistic human image from a text prompt.",
+        "Preconditions": "A text prompt is provided.",
+        "Expected Effects": "Generates a photorealistic human image consistent with the input text prompt.",
+        "Dependencies": {
+            "Nodes": "CLIPLoader, VAELoader, UNETLoader, CLIPTextEncode, ConditioningZeroOut, EmptySD3LatentImage, ModelSamplingAuraFlow, KSampler, VAEDecode, SaveImage",
+            "Models": "qwen_3_4b.safetensors, z_image_turbo_bf16.safetensors, ae.safetensors",
+            "Parameters": "1024×1024, batch_size=1, shift=3, steps=8, cfg=1, sampler=res_multistep, scheduler=simple, denoise=1"
+        },
+        "Usage Count": 3,
+        "Success Count": 3,
+        "Reliability Tier": "Validated"
+    },
+    "8": {
+        "Modality": "T2I",
+        "Capability Category": "In-Image Text Generation",
+        "Workflow Source Code": "8.json",
+        "Workflow Name": "Complex_Text_Image_Generation",
+        "Workflow Description": "This workflow generates an image containing complex text content from a text prompt.",
+        "Preconditions": "A text prompt is provided.",
+        "Expected Effects": "Generates an image with clear and accurate complex text consistent with the input prompt.",
+        "Dependencies": {
+            "Nodes": "VAELoader, CLIPLoader, UNETLoader, LoraLoaderModelOnly, CLIPTextEncode, ConditioningZeroOut, EmptySD3LatentImage, ModelSamplingAuraFlow, KSampler, VAEDecode, SaveImage",
+            "Models": "qwen_image_2512_fp8_e4m3fn.safetensors, qwen_2.5_vl_7b_fp8_scaled.safetensors, qwen_image_vae.safetensors, Wuli-Qwen-Image-2512-Turbo-LoRA-2steps-V1.0-bf16.safetensors",
+            "Parameters": "928×1664, batch_size=1, shift=3, steps=2, cfg=1, sampler=euler, scheduler=simple, denoise=1, LoRA strength=1"
+        },
+        "Usage Count": 1,
+        "Success Count": 0,
+        "Reliability Tier": "Provisional"
+    },
+    "9": {
+        "Modality": "I2I",
+        "Capability Category": "Style Transfer & Repainting",
+        "Workflow Source Code": "9.json",
+        "Workflow Name": "Scribble_Style_Repainting",
+        "Workflow Description": "This workflow repaints an input image into a scribble style while preserving its main content and composition.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Generates a scribble-style image while maintaining the main objects and composition of the source image.",
+        "Dependencies": {
+            "Nodes": "LoadImage, ImageScaleToTotalPixels, GetImageSize, VAEEncode, ReferenceLatent, CLIPLoader, UNETLoader, VAELoader, CLIPTextEncode, ConditioningZeroOut, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, VAEDecode, SaveImage",
+            "Models": "flux-2-klein-9b-fp8.safetensors, qwen_3_8b_fp8mixed.safetensors, full_encoder_small_decoder.safetensors",
+            "Parameters": "megapixels=1, batch_size=1, steps=4, cfg=1, sampler=euler, upscale_method=nearest-exact"
+        },
+        "Usage Count": 0,
+        "Success Count": 0,
+        "Reliability Tier": "Provisional"
+    },
+    "10": {
+        "Modality": "I2I",
+        "Capability Category": "Image Restoration & Refinement",
+        "Workflow Source Code": "10.json",
+        "Workflow Name": "Portrait_Beautification_With_Super_Resolution",
+        "Workflow Description": "This workflow enhances facial appearance in a portrait image and improves the result through high-resolution upscaling.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Produces a refined high-resolution portrait with improved facial appearance while preserving the subject identity, pose, and overall image content.",
+        "Dependencies": {
+            "Nodes": "LoadImage, ImageScaleToTotalPixels, GetImageSize, VAEEncode, ReferenceLatent, CLIPLoader, UNETLoader, VAELoader, CLIPTextEncode, ConditioningZeroOut, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, VAEDecode, UpscaleModelLoader, UltimateSDUpscale, SaveImage",
+            "Models": "flux-2-klein-9b-fp8.safetensors, qwen_3_8b_fp8mixed.safetensors, full_encoder_small_decoder.safetensors, 4x-UltraSharp.pth",
+            "Parameters": "megapixels=1, batch_size=1, steps=4, cfg=1, sampler=euler, upscale_by=2, denoise=0.2, tile_width=1024, tile_height=1024, mask_blur=8, tile_padding=32"
+        },
+        "Usage Count": 2,
+        "Success Count": 2,
+        "Reliability Tier": "Provisional"
+    },
+    "11": {
+        "Modality": "I2I",
+        "Capability Category": "Image Restoration & Refinement",
+        "Workflow Source Code": "11.json",
+        "Workflow Name": "AI_Image_Defect_Repair",
+        "Workflow Description": "This workflow repairs abnormal or incorrect details in an AI-generated image while preserving its main visual content.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Corrects defective image details such as missing or extra fingers while maintaining the original subject, pose, and overall composition.",
+        "Dependencies": {
+            "Nodes": "LoadImage, FluxKontextImageScale, GetImageSize, CheckpointLoaderSimple, TextEncodeQwenImageEditPlus, EmptyLatentImage, KSampler, VAEDecode, SaveImage",
+            "Models": "Qwen-Rapid-AIO-NSFW-v23.safetensors",
+            "Parameters": "batch_size=1, steps=4, cfg=1, sampler=euler_ancestral, scheduler=beta, denoise=1, output size=input image size"
+        },
+        "Usage Count": 1,
+        "Success Count": 1,
+        "Reliability Tier": "Provisional"
+    },
+    "12": {
+        "Modality": "T2I",
+        "Capability Category": "Illustration & Comic Generation",
+        "Workflow Source Code": "12.json",
+        "Workflow Name": "Comic_Style_Generation",
+        "Workflow Description": "This workflow generates an image from a text prompt and repaints it in a comic style.",
+        "Preconditions": "A text prompt is provided.",
+        "Expected Effects": "Generates a comic-style image consistent with the input text prompt.",
+        "Dependencies": {
+            "Nodes": "CLIPLoader, VAELoader, UNETLoader, CLIPTextEncode, ConditioningZeroOut, EmptySD3LatentImage, ModelSamplingAuraFlow, KSampler, VAEDecode, ImageScaleToTotalPixels, GetImageSize, VAEEncode, ReferenceLatent, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, SaveImage",
+            "Models": "qwen_3_4b.safetensors, z_image_turbo_bf16.safetensors, ae.safetensors, qwen_3_8b_fp8mixed.safetensors, flux-2-klein-9b-fp8.safetensors, full_encoder_small_decoder.safetensors",
+            "Parameters": "1024×1024, batch_size=1, shift=3, steps=8/4, cfg=1, sampler=res_multistep/euler, scheduler=simple/Flux2Scheduler, denoise=1, megapixels=1"
+        },
+        "Usage Count": 1,
+        "Success Count": 1,
+        "Reliability Tier": "Provisional"
+    },
+    "13": {
+        "Modality": "T2I",
+        "Capability Category": "In-Image Text Generation",
+        "Workflow Source Code": "13.json",
+        "Workflow Name": "Simple_Text_Image_Generation",
+        "Workflow Description": "This workflow generates an image containing specified simple text from a text prompt.",
+        "Preconditions": "A text prompt is provided.",
+        "Expected Effects": "Generates an image with clear and legible text consistent with the input prompt.",
+        "Dependencies": {
+            "Nodes": "CLIPLoader, VAELoader, UNETLoader, CLIPTextEncode, ConditioningZeroOut, EmptyLatentImage, KSampler, VAEDecode, SaveImage",
+            "Models": "qwen3vl_8b_fp8_scaled.safetensors, boogu_image_turbo_fp8_scaled.safetensors, flux1_vae_bf16.safetensors",
+            "Parameters": "1024×1024, batch_size=1, steps=4, cfg=1, sampler=lcm, scheduler=sgm_uniform, denoise=1"
+        },
+        "Usage Count": 2,
+        "Success Count": 2,
+        "Reliability Tier": "Provisional"
+    },
+    "14": {
+        "Modality": "T2I",
+        "Capability Category": "Position-Constrained Generation",
+        "Workflow Source Code": "14.json",
+        "Workflow Name": "Position_Constrained_Generation",
+        "Workflow Description": "This workflow generates an image with objects placed at specified positions from a text prompt.",
+        "Preconditions": "A text prompt is provided.",
+        "Expected Effects": "Generates an image that follows the specified object placement and scene description.",
+        "Dependencies": {
+            "Nodes": "CLIPLoader, VAELoader, UNETLoader, CLIPTextEncode, ConditioningZeroOut, EmptySD3LatentImage, ModelSamplingAuraFlow, KSampler, VAEDecode, SaveImage",
+            "Models": "qwen_3_4b.safetensors, z_image_turbo_bf16.safetensors, ae.safetensors",
+            "Parameters": "1024×1024, batch_size=1, shift=3, steps=6, cfg=1, sampler=res_multistep, scheduler=simple, denoise=1"
+        },
+        "Usage Count": 2,
+        "Success Count": 1,
+        "Reliability Tier": "Provisional"
+    },
+    "15": {
+        "Modality": "I2I",
+        "Capability Category": "Image Outpainting",
+        "Workflow Source Code": "15.json",
+        "Workflow Name": "Image_Outpainting",
+        "Workflow Description": "This workflow expands an input image beyond its original boundaries while maintaining visual consistency with the source image.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Extends the surrounding scene beyond the original image while preserving consistent content and visual style.",
+        "Dependencies": {
+            "Nodes": "LoadImage, ImagePadForOutpaint, GetImageSize, VAEEncode, ReferenceLatent, CLIPLoader, UNETLoader, VAELoader, CLIPTextEncode, ConditioningZeroOut, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, VAEDecode, SaveImage",
+            "Models": "flux-2-klein-9b-fp8.safetensors, qwen_3_8b_fp8mixed.safetensors, full_encoder_small_decoder.safetensors",
+            "Parameters": "batch_size=1, steps=4, cfg=1, sampler=euler, feathering=100"
+        },
+        "Usage Count": 6,
+        "Success Count": 3,
+        "Reliability Tier": "Validated"
+    },
+    "16": {
+        "Modality": "I2I",
+        "Capability Category": "Localized Image Editing",
+        "Workflow Source Code": "16.json",
+        "Workflow Name": "Scene_Detail_Removal",
+        "Workflow Description": "This workflow removes specified details from an image while preserving the remaining scene content.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Removes specified scene details while maintaining the surrounding content and visual consistency.",
+        "Dependencies": {
+            "Nodes": "LoadImage, ImageScaleToTotalPixels, GetImageSize, VAEEncode, ReferenceLatent, CLIPLoader, UNETLoader, VAELoader, CLIPTextEncode, ConditioningZeroOut, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, VAEDecode, SaveImage",
+            "Models": "flux-2-klein-9b-fp8.safetensors, qwen_3_8b_fp8mixed.safetensors, full_encoder_small_decoder.safetensors",
+            "Parameters": "megapixels=1, batch_size=1, steps=4, cfg=1, sampler=euler, upscale_method=nearest-exact"
+        },
+        "Usage Count": 11,
+        "Success Count": 8,
+        "Reliability Tier": "Validated"
+    },
+    "17": {
+        "Modality": "T2I",
+        "Capability Category": "Poster & Graphic Design",
+        "Workflow Source Code": "17.json",
+        "Workflow Name": "Artistic_Style_Generation",
+        "Workflow Description": "This workflow generates an artistic-style image from a text prompt.",
+        "Preconditions": "A text prompt is provided.",
+        "Expected Effects": "Generates an artistic-style image consistent with the input text prompt.",
+        "Dependencies": {
+            "Nodes": "VAELoader, CLIPLoader, UNETLoader, LoraLoaderModelOnly, CLIPTextEncode, ConditioningZeroOut, EmptySD3LatentImage, ModelSamplingAuraFlow, KSampler, VAEDecode, SaveImage",
+            "Models": "qwen_image_2512_fp8_e4m3fn.safetensors, qwen_2.5_vl_7b_fp8_scaled.safetensors, qwen_image_vae.safetensors, Wuli-Qwen-Image-2512-Turbo-LoRA-2steps-V1.0-bf16.safetensors",
+            "Parameters": "1328×1328, batch_size=1, shift=3, steps=2, cfg=1, sampler=euler, scheduler=simple, denoise=1, LoRA strength=1"
+        },
+        "Usage Count": 1,
+        "Success Count": 1,
+        "Reliability Tier": "Provisional"
+    },
+    "18": {
+        "Modality": "I2I",
+        "Capability Category": "Style Transfer & Repainting",
+        "Workflow Source Code": "18.json",
+        "Workflow Name": "Watercolor_Style_Repainting",
+        "Workflow Description": "This workflow repaints an input image into a watercolor style while preserving its main content and composition.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Generates a watercolor-style image while maintaining the main objects and composition of the source image.",
+        "Dependencies": {
+            "Nodes": "LoadImage, ImageScaleToTotalPixels, GetImageSize, VAEEncode, ReferenceLatent, CLIPLoader, UNETLoader, VAELoader, CLIPTextEncode, ConditioningZeroOut, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, VAEDecode, SaveImage",
+            "Models": "flux-2-klein-9b-fp8.safetensors, qwen_3_8b_fp8mixed.safetensors, full_encoder_small_decoder.safetensors",
+            "Parameters": "megapixels=1, batch_size=1, steps=4, cfg=1, sampler=euler, upscale_method=nearest-exact"
+        },
+        "Usage Count": 1,
+        "Success Count": 1,
+        "Reliability Tier": "Provisional"
+    },
+    "19": {
+        "Modality": "T2I",
+        "Capability Category": "Illustration & Comic Generation",
+        "Workflow Source Code": "19.json",
+        "Workflow Name": "Oil_Painting_Style_Generation",
+        "Workflow Description": "This workflow generates an image from a text prompt and repaints it in an oil painting style.",
+        "Preconditions": "A text prompt is provided.",
+        "Expected Effects": "Generates an oil-painting-style image consistent with the input text prompt.",
+        "Dependencies": {
+            "Nodes": "CLIPLoader, VAELoader, UNETLoader, CLIPTextEncode, ConditioningZeroOut, EmptySD3LatentImage, ModelSamplingAuraFlow, KSampler, VAEDecode, ImageScaleToTotalPixels, GetImageSize, VAEEncode, ReferenceLatent, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, SaveImage",
+            "Models": "qwen_3_4b.safetensors, z_image_turbo_bf16.safetensors, ae.safetensors, qwen_3_8b_fp8mixed.safetensors, flux-2-klein-9b-fp8.safetensors, full_encoder_small_decoder.safetensors",
+            "Parameters": "1024×1024, batch_size=1, shift=3, steps=8/4, cfg=1, sampler=res_multistep/euler, scheduler=simple/Flux2Scheduler, denoise=1, megapixels=1"
+        },
+        "Usage Count": 1,
+        "Success Count": 1,
+        "Reliability Tier": "Provisional"
+    },
+    "20": {
+        "Modality": "I2I",
+        "Capability Category": "Style Transfer & Repainting",
+        "Workflow Source Code": "20.json",
+        "Workflow Name": "Poster_Style_Repainting",
+        "Workflow Description": "This workflow repaints an input image into a poster style while preserving its main content and composition.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Generates a poster-style image while maintaining the main objects and composition of the source image.",
+        "Dependencies": {
+            "Nodes": "LoadImage, ImageScaleToTotalPixels, GetImageSize, VAEEncode, ReferenceLatent, CLIPLoader, UNETLoader, VAELoader, CLIPTextEncode, ConditioningZeroOut, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, VAEDecode, SaveImage",
+            "Models": "flux-2-klein-9b-fp8.safetensors, qwen_3_8b_fp8mixed.safetensors, full_encoder_small_decoder.safetensors",
+            "Parameters": "megapixels=1, batch_size=1, steps=4, cfg=1, sampler=euler, upscale_method=nearest-exact"
+        },
+        "Usage Count": 2,
+        "Success Count": 2,
+        "Reliability Tier": "Provisional"
+    },
+    "21": {
+        "Modality": "I2I",
+        "Capability Category": "Reference-Guided Generation",
+        "Workflow Source Code": "21.json",
+        "Workflow Name": "Pose_Guided_Generation_With_Scene_Replacement",
+        "Workflow Description": "This workflow generates a new image guided by the pose of a reference image and further replaces its scene according to the text prompt.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Generates a new image whose target object follows the reference pose while replacing the surrounding scene with the specified target scene.",
+        "Dependencies": {
+            "Nodes": "LoadImage, ImageScaleToTotalPixels, GetImageSize, VAEEncode, ReferenceLatent, CLIPLoader, UNETLoader, VAELoader, CLIPTextEncode, ConditioningZeroOut, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, VAEDecode, SaveImage",
+            "Models": "flux-2-klein-9b-fp8.safetensors, qwen_3_8b_fp8mixed.safetensors, full_encoder_small_decoder.safetensors",
+            "Parameters": "megapixels=1, batch_size=1, steps=4+4, cfg=1, sampler=euler, upscale_method=nearest-exact"
+        },
+        "Usage Count": 1,
+        "Success Count": 1,
+        "Reliability Tier": "Provisional"
+    },
+    "22": {
+        "Modality": "T2I",
+        "Capability Category": "Illustration & Comic Generation",
+        "Workflow Source Code": "22.json",
+        "Workflow Name": "Watercolor_Style_Generation",
+        "Workflow Description": "This workflow generates an image from a text prompt and repaints it in a watercolor style.",
+        "Preconditions": "A text prompt is provided.",
+        "Expected Effects": "Generates a watercolor-style image consistent with the input text prompt.",
+        "Dependencies": {
+            "Nodes": "CLIPLoader, VAELoader, UNETLoader, CLIPTextEncode, ConditioningZeroOut, EmptySD3LatentImage, ModelSamplingAuraFlow, KSampler, VAEDecode, ImageScaleToTotalPixels, GetImageSize, VAEEncode, ReferenceLatent, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, SaveImage",
+            "Models": "qwen_3_4b.safetensors, z_image_turbo_bf16.safetensors, ae.safetensors, qwen_3_8b_fp8mixed.safetensors, flux-2-klein-9b-fp8.safetensors, full_encoder_small_decoder.safetensors",
+            "Parameters": "1024×1024, batch_size=1, shift=3, steps=8/4, cfg=1, sampler=res_multistep/euler, scheduler=simple/Flux2Scheduler, denoise=1, megapixels=1"
+        },
+        "Usage Count": 1,
+        "Success Count": 1,
+        "Reliability Tier": "Provisional"
+    },
+    "23": {
+        "Modality": "I2I",
+        "Capability Category": "Image Restoration & Refinement",
+        "Workflow Source Code": "23.json",
+        "Workflow Name": "Portrait_Beautification",
+        "Workflow Description": "This workflow enhances facial appearance in a portrait image while preserving the subject identity and overall image content.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Produces a refined portrait with improved facial appearance while maintaining the original identity, pose, and overall composition.",
+        "Dependencies": {
+            "Nodes": "LoadImage, ImageScaleToTotalPixels, GetImageSize, VAEEncode, ReferenceLatent, CLIPLoader, UNETLoader, VAELoader, CLIPTextEncode, ConditioningZeroOut, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, VAEDecode, SaveImage",
+            "Models": "flux-2-klein-9b-fp8.safetensors, qwen_3_8b_fp8mixed.safetensors, full_encoder_small_decoder.safetensors",
+            "Parameters": "megapixels=1, batch_size=1, steps=4, cfg=1, sampler=euler, upscale_method=nearest-exact"
+        },
+        "Usage Count": 2,
+        "Success Count": 2,
+        "Reliability Tier": "Provisional"
+    },
+    "24": {
+        "Modality": "I2I",
+        "Capability Category": "Reference-Guided Generation",
+        "Workflow Source Code": "24.json",
+        "Workflow Name": "Style_Guided_Generation_With_Scene_Replacement",
+        "Workflow Description": "This workflow generates a new image guided by the style of a reference image and further replaces its scene according to the text prompt.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Generates a new image that follows the reference style while replacing the original scene with the specified target scene.",
+        "Dependencies": {
+            "Nodes": "LoadImage, FluxKontextImageScale, GetImageSize, VAELoader, UNETLoader, CLIPLoader, Krea2OstrisEditModelPatch, LoraLoaderModelOnly, TextEncodeKrea2OstrisEdit, FluxKontextMultiReferenceLatentMethod, EmptyLatentImage, KSampler, ImageScaleToTotalPixels, VAEEncode, ReferenceLatent, CLIPTextEncode, ConditioningZeroOut, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, VAEDecode, SaveImage",
+            "Models": "krea2_turbo_fp8_scaled.safetensors, qwen3vl_4b_fp8_scaled.safetensors, qwen_image_vae.safetensors, krea2_style_reference.safetensors, flux-2-klein-9b-fp8.safetensors, qwen_3_8b_fp8mixed.safetensors, full_encoder_small_decoder.safetensors",
+            "Parameters": "batch_size=1, steps=10+4, cfg=1, sampler=euler, scheduler=simple/Flux2Scheduler, denoise=1, LoRA strength=1, reference_latents_method=index_timestep_zero, megapixels=1"
+        },
+        "Usage Count": 1,
+        "Success Count": 0,
+        "Reliability Tier": "Provisional"
+    },
+    "25": {
+        "Modality": "T2I",
+        "Capability Category": "Photorealistic Generation",
+        "Workflow Source Code": "25.json",
+        "Workflow Name": "Photorealistic_Scene_Generation",
+        "Workflow Description": "This workflow generates a photorealistic scene image from a text prompt.",
+        "Preconditions": "A text prompt is provided.",
+        "Expected Effects": "Generates a photorealistic scene image consistent with the input text prompt.",
+        "Dependencies": {
+            "Nodes": "CLIPLoader, VAELoader, UNETLoader, CLIPTextEncode, ConditioningZeroOut, EmptySD3LatentImage, ModelSamplingAuraFlow, KSampler, VAEDecode, SaveImage",
+            "Models": "qwen_3_4b.safetensors, z_image_turbo_bf16.safetensors, ae.safetensors",
+            "Parameters": "1024×1024, batch_size=1, shift=3, steps=6, cfg=1, sampler=res_multistep, scheduler=simple, denoise=1"
+        },
+        "Usage Count": 15,
+        "Success Count": 15,
+        "Reliability Tier": "Validated"
+    },
+    "26": {
+        "Modality": "I2I",
+        "Capability Category": "Reference-Guided Generation",
+        "Workflow Source Code": "26.json",
+        "Workflow Name": "Style_Guided_Generation_With_Repainting",
+        "Workflow Description": "This workflow generates a new image guided by the style of a reference image and further repaints it into a specified target style.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Generates a new image that follows the reference style and is further transformed into the specified target style.",
+        "Dependencies": {
+            "Nodes": "LoadImage, FluxKontextImageScale, GetImageSize, VAELoader, UNETLoader, CLIPLoader, Krea2OstrisEditModelPatch, LoraLoaderModelOnly, TextEncodeKrea2OstrisEdit, FluxKontextMultiReferenceLatentMethod, EmptyLatentImage, KSampler, ImageScaleToTotalPixels, VAEEncode, ReferenceLatent, ConditioningZeroOut, CLIPTextEncode, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, VAEDecode, SaveImage",
+            "Models": "krea2_turbo_fp8_scaled.safetensors, qwen3vl_4b_fp8_scaled.safetensors, qwen_image_vae.safetensors, krea2_style_reference.safetensors, flux-2-klein-9b-fp8.safetensors, qwen_3_8b_fp8mixed.safetensors, full_encoder_small_decoder.safetensors",
+            "Parameters": "batch_size=1, steps=10+4, cfg=1, sampler=euler, scheduler=simple/Flux2Scheduler, denoise=1, LoRA strength=1, reference_latents_method=index_timestep_zero, megapixels=1"
+        },
+        "Usage Count": 1,
+        "Success Count": 0,
+        "Reliability Tier": "Provisional"
+    },
+    "27": {
+        "Modality": "T2I",
+        "Capability Category": "Photorealistic Generation",
+        "Workflow Source Code": "27.json",
+        "Workflow Name": "Style_Cloning_Generation",
+        "Workflow Description": "This workflow generates an image from a text prompt and clones its visual style through reference-based generation.",
+        "Preconditions": "A text prompt is provided.",
+        "Expected Effects": "Generates a new image that preserves the visual style of the initially generated image.",
+        "Dependencies": {
+            "Nodes": "CLIPLoader, VAELoader, UNETLoader, CLIPTextEncode, ConditioningZeroOut, EmptySD3LatentImage, ModelSamplingAuraFlow, KSampler, VAEDecode, FluxKontextImageScale, GetImageSize, Krea2OstrisEditModelPatch, LoraLoaderModelOnly, TextEncodeKrea2OstrisEdit, FluxKontextMultiReferenceLatentMethod, EmptyLatentImage, SaveImage",
+            "Models": "qwen_3_4b.safetensors, z_image_turbo_bf16.safetensors, ae.safetensors, qwen3vl_4b_fp8_scaled.safetensors, krea2_turbo_fp8_scaled.safetensors, qwen_image_vae.safetensors, krea2_style_reference.safetensors",
+            "Parameters": "1024×1024, batch_size=1, shift=3, steps=8/10, cfg=1, sampler=res_multistep/euler, scheduler=simple, denoise=1, LoRA strength=1"
+        },
+        "Usage Count": 1,
+        "Success Count": 0,
+        "Reliability Tier": "Provisional"
+    },
+    "28": {
+        "Modality": "T2I",
+        "Capability Category": "Photorealistic Generation",
+        "Workflow Source Code": "28.json",
+        "Workflow Name": "Background_Replacement_Generation",
+        "Workflow Description": "This workflow generates an image from a text prompt and replaces its background with a specified scene.",
+        "Preconditions": "A text prompt is provided.",
+        "Expected Effects": "Generates an image with the specified background while preserving the main foreground content.",
+        "Dependencies": {
+            "Nodes": "CLIPLoader, VAELoader, UNETLoader, CLIPTextEncode, ConditioningZeroOut, EmptySD3LatentImage, ModelSamplingAuraFlow, KSampler, VAEDecode, ImageScaleToTotalPixels, GetImageSize, VAEEncode, ReferenceLatent, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, SaveImage",
+            "Models": "qwen_3_4b.safetensors, z_image_turbo_bf16.safetensors, ae.safetensors, qwen_3_8b_fp8mixed.safetensors, flux-2-klein-9b-fp8.safetensors, full_encoder_small_decoder.safetensors",
+            "Parameters": "1024×1024, batch_size=1, shift=3, steps=8/4, cfg=1, sampler=res_multistep/euler, scheduler=simple/Flux2Scheduler, denoise=1, megapixels=1"
+        },
+        "Usage Count": 3,
+        "Success Count": 3,
+        "Reliability Tier": "Validated"
+    },
+    "29": {
+        "Modality": "I2I",
+        "Capability Category": "Localized Image Editing",
+        "Workflow Source Code": "29.json",
+        "Workflow Name": "Scene_Detail_Removal_With_Style_Repainting",
+        "Workflow Description": "This workflow removes specified details from an input image and further repaints the edited result into a target style.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Removes specified scene details and transforms the edited image into the target style while preserving the remaining scene content.",
+        "Dependencies": {
+            "Nodes": "LoadImage, ImageScaleToTotalPixels, GetImageSize, VAEEncode, ReferenceLatent, CLIPLoader, UNETLoader, VAELoader, CLIPTextEncode, ConditioningZeroOut, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, VAEDecode, SaveImage",
+            "Models": "flux-2-klein-9b-fp8.safetensors, qwen_3_8b_fp8mixed.safetensors, full_encoder_small_decoder.safetensors",
+            "Parameters": "megapixels=1, batch_size=1, steps=4+4, cfg=1, sampler=euler, upscale_method=nearest-exact"
+        },
+        "Usage Count": 3,
+        "Success Count": 3,
+        "Reliability Tier": "Validated"
+    },
+    "30": {
+        "Modality": "I2I",
+        "Capability Category": "Localized Image Editing",
+        "Workflow Source Code": "30.json",
+        "Workflow Name": "Localized_Color_Repainting",
+        "Workflow Description": "This workflow changes the color of a specified image region while preserving the remaining image content.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Repaints the specified region with the target color while maintaining the surrounding content and visual consistency.",
+        "Dependencies": {
+            "Nodes": "LoadImage, ImageScaleToTotalPixels, GetImageSize, VAEEncode, ReferenceLatent, CLIPLoader, UNETLoader, VAELoader, CLIPTextEncode, ConditioningZeroOut, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, VAEDecode, SaveImage",
+            "Models": "flux-2-klein-9b-fp8.safetensors, qwen_3_8b_fp8mixed.safetensors, full_encoder_small_decoder.safetensors",
+            "Parameters": "megapixels=1, batch_size=1, steps=4, cfg=1, sampler=euler, upscale_method=nearest-exact"
+        },
+        "Usage Count": 13,
+        "Success Count": 13,
+        "Reliability Tier": "Validated"
+    },
+    "31": {
+        "Modality": "I2I",
+        "Capability Category": "Image Restoration & Refinement",
+        "Workflow Source Code": "31.json",
+        "Workflow Name": "Black_And_White_Image_Colorization",
+        "Workflow Description": "This workflow colorizes a black-and-white image while preserving its original content and structure.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Produces a naturally colorized image while maintaining the original subjects, scene structure, and overall composition.",
+        "Dependencies": {
+            "Nodes": "LoadImage, FluxKontextImageScale, GetImageSize, CheckpointLoaderSimple, TextEncodeQwenImageEditPlus, EmptyLatentImage, KSampler, VAEDecode, SaveImage",
+            "Models": "Qwen-Rapid-AIO-NSFW-v23.safetensors",
+            "Parameters": "batch_size=1, steps=4, cfg=1, sampler=euler_ancestral, scheduler=beta, denoise=1, output size=input image size"
+        },
+        "Usage Count": 1,
+        "Success Count": 1,
+        "Reliability Tier": "Provisional"
+    },
+    "32": {
+        "Modality": "T2I",
+        "Capability Category": "Photorealistic Generation",
+        "Workflow Source Code": "32.json",
+        "Workflow Name": "Photorealistic_Animal_Generation",
+        "Workflow Description": "This workflow generates a photorealistic animal image from a text prompt.",
+        "Preconditions": "A text prompt is provided.",
+        "Expected Effects": "Generates a photorealistic animal image consistent with the input text prompt.",
+        "Dependencies": {
+            "Nodes": "CLIPLoader, VAELoader, UNETLoader, CLIPTextEncode, ConditioningZeroOut, EmptySD3LatentImage, ModelSamplingAuraFlow, KSampler, VAEDecode, SaveImage",
+            "Models": "qwen_3_4b.safetensors, z_image_turbo_bf16.safetensors, ae.safetensors",
+            "Parameters": "1024×1024, batch_size=1, shift=3, steps=9, cfg=1, sampler=res_multistep, scheduler=simple, denoise=1"
+        },
+        "Usage Count": 3,
+        "Success Count": 3,
+        "Reliability Tier": "Validated"
+    },
+    "33": {
+        "Modality": "I2I",
+        "Capability Category": "Image Super-Resolution",
+        "Workflow Source Code": "33.json",
+        "Workflow Name": "Image_Super_Resolution",
+        "Workflow Description": "This workflow enhances the resolution and visual details of an input image through high-quality upscaling.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Produces a higher-resolution image with enhanced details while preserving the original visual content.",
+        "Dependencies": {
+            "Nodes": "LoadImage, UNETLoader, CLIPLoader, CLIPTextEncode, VAELoader, UpscaleModelLoader, ModelSamplingAuraFlow, ConditioningZeroOut, FloatConstant, UltimateSDUpscale, SaveImage",
+            "Models": "z_image_turbo_bf16.safetensors, qwen_3_4b.safetensors, ae.safetensors, 4x-UltraSharp.pth",
+            "Parameters": "upscale_by=4, steps=8, cfg=1, sampler=euler, scheduler=simple, denoise=0.2, tile_width=1024, tile_height=1024, mask_blur=8, tile_padding=32, batch_size=1, shift=3"
+        },
+        "Usage Count": 2,
+        "Success Count": 2,
+        "Reliability Tier": "Provisional"
+    },
+    "34": {
+        "Modality": "I2I",
+        "Capability Category": "Reference-Guided Generation",
+        "Workflow Source Code": "34.json",
+        "Workflow Name": "Pose_Guided_Generation_With_Repainting",
+        "Workflow Description": "This workflow generates a new image guided by the pose of a reference image and further repaints it into a specified target style.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Generates a new image whose target object follows the reference pose and is further transformed into the specified target style.",
+        "Dependencies": {
+            "Nodes": "LoadImage, ImageScaleToTotalPixels, GetImageSize, VAEEncode, ReferenceLatent, CLIPLoader, UNETLoader, VAELoader, CLIPTextEncode, ConditioningZeroOut, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, VAEDecode, SaveImage",
+            "Models": "flux-2-klein-9b-fp8.safetensors, qwen_3_8b_fp8mixed.safetensors, full_encoder_small_decoder.safetensors",
+            "Parameters": "megapixels=1, batch_size=1, steps=4+4, cfg=1, sampler=euler, upscale_method=nearest-exact"
+        },
+        "Usage Count": 1,
+        "Success Count": 1,
+        "Reliability Tier": "Provisional"
+    },
+    "35": {
+        "Modality": "T2I",
+        "Capability Category": "Futuristic & Fantasy Generation",
+        "Workflow Source Code": "35.json",
+        "Workflow Name": "Futuristic_Scene_Generation",
+        "Workflow Description": "This workflow generates a futuristic scene image from a text prompt.",
+        "Preconditions": "A text prompt is provided.",
+        "Expected Effects": "Generates a futuristic scene image consistent with the input text prompt.",
+        "Dependencies": {
+            "Nodes": "CLIPLoader, VAELoader, UNETLoader, CLIPTextEncode, ConditioningZeroOut, EmptySD3LatentImage, ModelSamplingAuraFlow, KSampler, VAEDecode, SaveImage",
+            "Models": "qwen_3_4b.safetensors, z_image_turbo_bf16.safetensors, ae.safetensors",
+            "Parameters": "1024×1024, batch_size=1, shift=3, steps=4, cfg=1, sampler=res_multistep, scheduler=simple, denoise=1"
+        },
+        "Usage Count": 3,
+        "Success Count": 2,
+        "Reliability Tier": "Validated"
+    },
+    "36": {
+        "Modality": "I2I",
+        "Capability Category": "Localized Image Editing",
+        "Workflow Source Code": "36.json",
+        "Workflow Name": "Scene_Detail_Removal_With_Style_Guided_Generation",
+        "Workflow Description": "This workflow removes specified scene details and generates a new image guided by the style of the edited result.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Removes specified scene details and generates a new image that follows the visual style of the edited image.",
+        "Dependencies": {
+            "Nodes": "LoadImage, ImageScaleToTotalPixels, GetImageSize, VAEEncode, ReferenceLatent, CLIPLoader, UNETLoader, VAELoader, CLIPTextEncode, ConditioningZeroOut, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, VAEDecode, FluxKontextImageScale, Krea2OstrisEditModelPatch, LoraLoaderModelOnly, TextEncodeKrea2OstrisEdit, FluxKontextMultiReferenceLatentMethod, EmptyLatentImage, KSampler, SaveImage",
+            "Models": "flux-2-klein-9b-fp8.safetensors, qwen_3_8b_fp8mixed.safetensors, full_encoder_small_decoder.safetensors, krea2_turbo_fp8_scaled.safetensors, qwen3vl_4b_fp8_scaled.safetensors, qwen_image_vae.safetensors, krea2_style_reference.safetensors",
+            "Parameters": "megapixels=1, batch_size=1, steps=4+10, cfg=1, sampler=euler, denoise=1, LoRA strength=1, reference_latents_method=index_timestep_zero, upscale_method=nearest-exact"
+        },
+        "Usage Count": 2,
+        "Success Count": 0,
+        "Reliability Tier": "Provisional"
+    },
+    "37": {
+        "Modality": "T2I",
+        "Capability Category": "In-Image Text Generation",
+        "Workflow Source Code": "37.json",
+        "Workflow Name": "Watermarked_Image_Generation",
+        "Workflow Description": "This workflow generates an image containing a specified watermark from a text prompt.",
+        "Preconditions": "A text prompt is provided.",
+        "Expected Effects": "Generates an image with the specified watermark while maintaining the requested visual content.",
+        "Dependencies": {
+            "Nodes": "VAELoader, CLIPLoader, UNETLoader, LoraLoaderModelOnly, CLIPTextEncode, ConditioningZeroOut, EmptySD3LatentImage, ModelSamplingAuraFlow, KSampler, VAEDecode, SaveImage",
+            "Models": "qwen_image_2512_fp8_e4m3fn.safetensors, qwen_2.5_vl_7b_fp8_scaled.safetensors, qwen_image_vae.safetensors, Wuli-Qwen-Image-2512-Turbo-LoRA-2steps-V1.0-bf16.safetensors",
+            "Parameters": "1664×928, batch_size=1, shift=3, steps=2, cfg=1, sampler=euler, scheduler=simple, denoise=1, LoRA strength=1"
+        },
+        "Usage Count": 1,
+        "Success Count": 1,
+        "Reliability Tier": "Provisional"
+    },
+    "38": {
+        "Modality": "I2I",
+        "Capability Category": "Localized Image Editing",
+        "Workflow Source Code": "38.json",
+        "Workflow Name": "Scene_Detail_Addition",
+        "Workflow Description": "This workflow adds specified details to a scene while preserving the original image content.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Adds specified scene details while maintaining the original structure and visual consistency.",
+        "Dependencies": {
+            "Nodes": "LoadImage, ImageScaleToTotalPixels, GetImageSize, VAEEncode, ReferenceLatent, CLIPLoader, UNETLoader, VAELoader, CLIPTextEncode, ConditioningZeroOut, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, VAEDecode, SaveImage",
+            "Models": "flux-2-klein-9b-fp8.safetensors, qwen_3_8b_fp8mixed.safetensors, full_encoder_small_decoder.safetensors",
+            "Parameters": "megapixels=1, batch_size=1, steps=4, cfg=1, sampler=euler, upscale_method=nearest-exact"
+        },
+        "Usage Count": 6,
+        "Success Count": 5,
+        "Reliability Tier": "Validated"
+    },
+    "39": {
+        "Modality": "I2I",
+        "Capability Category": "Reference-Guided Generation",
+        "Workflow Source Code": "39.json",
+        "Workflow Name": "Style_Guided_Image_Generation",
+        "Workflow Description": "This workflow generates a new image by using a reference image to guide the target visual style.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Generates a new image that follows the style of the reference image while matching the target prompt.",
+        "Dependencies": {
+            "Nodes": "LoadImage, FluxKontextImageScale, GetImageSize, VAELoader, UNETLoader, CLIPLoader, Krea2OstrisEditModelPatch, LoraLoaderModelOnly, TextEncodeKrea2OstrisEdit, FluxKontextMultiReferenceLatentMethod, EmptyLatentImage, KSampler, VAEDecode, SaveImage",
+            "Models": "krea2_turbo_fp8_scaled.safetensors, qwen3vl_4b_fp8_scaled.safetensors, qwen_image_vae.safetensors, krea2_style_reference.safetensors",
+            "Parameters": "batch_size=1, steps=10, cfg=1, sampler=euler, scheduler=simple, denoise=1, LoRA strength=1, reference_latents_method=index_timestep_zero"
+        },
+        "Usage Count": 2,
+        "Success Count": 1,
+        "Reliability Tier": "Provisional"
+    },
+    "40": {
+        "Modality": "I2I",
+        "Capability Category": "Style Transfer & Repainting",
+        "Workflow Source Code": "40.json",
+        "Workflow Name": "Realistic_Style_Repainting",
+        "Workflow Description": "This workflow repaints an input image into a realistic style while preserving its main content and structure.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Generates a realistic-style image while maintaining the main objects and composition of the source image.",
+        "Dependencies": {
+            "Nodes": "LoadImage, ImageScaleToTotalPixels, GetImageSize, VAEEncode, ReferenceLatent, CLIPLoader, UNETLoader, VAELoader, CLIPTextEncode, ConditioningZeroOut, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, VAEDecode, SaveImage",
+            "Models": "flux-2-klein-9b-fp8.safetensors, qwen_3_8b_fp8mixed.safetensors, full_encoder_small_decoder.safetensors",
+            "Parameters": "megapixels=1, batch_size=1, steps=4, cfg=1, sampler=euler, upscale_method=nearest-exact"
+        },
+        "Usage Count": 2,
+        "Success Count": 2,
+        "Reliability Tier": "Provisional"
+    },
+    "41": {
+        "Modality": "I2I",
+        "Capability Category": "Image Restoration & Refinement",
+        "Workflow Source Code": "41.json",
+        "Workflow Name": "Portrait_Beautification_With_Scene_Replacement",
+        "Workflow Description": "This workflow enhances facial appearance in a portrait image and further replaces the surrounding scene according to the text prompt.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Produces a refined portrait with improved facial appearance and a replaced target scene while preserving the subject identity and pose.",
+        "Dependencies": {
+            "Nodes": "LoadImage, ImageScaleToTotalPixels, GetImageSize, VAEEncode, ReferenceLatent, CLIPLoader, UNETLoader, VAELoader, CLIPTextEncode, ConditioningZeroOut, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, VAEDecode, SaveImage",
+            "Models": "flux-2-klein-9b-fp8.safetensors, qwen_3_8b_fp8mixed.safetensors, full_encoder_small_decoder.safetensors",
+            "Parameters": "megapixels=1, batch_size=1, steps=4+4, cfg=1, sampler=euler, upscale_method=nearest-exact"
+        },
+        "Usage Count": 4,
+        "Success Count": 3,
+        "Reliability Tier": "Validated"
+    },
+    "42": {
+        "Modality": "I2I",
+        "Capability Category": "Image Outpainting",
+        "Workflow Source Code": "42.json",
+        "Workflow Name": "Image_Outpainting_With_Super_Resolution",
+        "Workflow Description": "This workflow expands an input image beyond its original boundaries and enhances the result with high-resolution upscaling.",
+        "Preconditions": "A source image and a text prompt are provided.",
+        "Expected Effects": "Extends the surrounding scene beyond the original image and produces a higher-resolution result with enhanced visual details.",
+        "Dependencies": {
+            "Nodes": "LoadImage, ImageScaleToTotalPixels, ImagePadForOutpaint, GetImageSize, VAEEncode, ReferenceLatent, CLIPLoader, UNETLoader, VAELoader, CLIPTextEncode, ConditioningZeroOut, EmptyFlux2LatentImage, CFGGuider, Flux2Scheduler, RandomNoise, KSamplerSelect, SamplerCustomAdvanced, VAEDecode, UpscaleModelLoader, UltimateSDUpscale, SaveImage",
+            "Models": "flux-2-klein-9b-fp8.safetensors, qwen_3_8b_fp8mixed.safetensors, full_encoder_small_decoder.safetensors, 4x-UltraSharp.pth",
+            "Parameters": "megapixels=1, feathering=100, batch_size=1, steps=4, cfg=1, sampler=euler, upscale_by=2, denoise=0.2, tile_width=1024, tile_height=1024, mask_blur=8, tile_padding=32"
+        },
+        "Usage Count": 2,
+        "Success Count": 2,
+        "Reliability Tier": "Provisional"
+    },
+    "43": {
+        "Modality": "T2I",
+        "Capability Category": "Photorealistic Generation",
+        "Workflow Source Code": "43.json",
+        "Workflow Name": "High_Resolution_Image_Generation",
+        "Workflow Description": "This workflow generates an image from a text prompt and upscales it to a higher resolution.",
+        "Preconditions": "A text prompt is provided.",
+        "Expected Effects": "Generates a high-resolution image with enhanced spatial resolution and visual details.",
+        "Dependencies": {
+            "Nodes": "CLIPLoader, VAELoader, UNETLoader, CLIPTextEncode, ConditioningZeroOut, EmptySD3LatentImage, ModelSamplingAuraFlow, KSampler, VAEDecode, UpscaleModelLoader, UltimateSDUpscale, SaveImage",
+            "Models": "qwen_3_4b.safetensors, z_image_turbo_bf16.safetensors, ae.safetensors, 4x-UltraSharp.pth",
+            "Parameters": "1024×1024, upscale_by=2, steps=8, cfg=1, sampler=res_multistep/euler, scheduler=simple, upscale_denoise=0.2, tile=1024×1024"
+        },
+        "Usage Count": 3,
+        "Success Count": 3,
+        "Reliability Tier": "Validated"
+    }
+}

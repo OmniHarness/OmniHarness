@@ -1,0 +1,48 @@
+# Copy this file to config.yaml, replace the provider URL, and keep config.yaml
+# private. API keys must exist only in the named environment variables.
+
+codex:
+  model: gpt-4o
+  provider: omniharness_gpt4o
+  base_url: https://YOUR_PROVIDER.example/v1
+  api_key_env: OMNIHARNESS_API_KEY
+  reasoning_effort: null
+
+# GPT-4o based official evaluators reuse the provider above unless overridden
+# here or on the command line. Use chat-completions only when the provider does
+# not expose the Responses API.
+evaluation:
+  model: gpt-4o
+  base_url: null
+  api_key_env: OMNIHARNESS_API_KEY
+  wire_api: responses
+  timeout_seconds: 300
+
+paths:
+  project_root: .
+  # New online runs initialize an empty library here; existing state is retained.
+  # For the 43-record reference library, explicitly select resources/symbolic_policy.
+  symbolic_policy: runs/policy_library
+  # Swap to resources/source_image_pool_gpt for the source-pool isolation study.
+  source_image_pool: resources/source_image_pool_comfybench
+  output_root: runs
+  proposal_output: task_contract.json
+  proposal_audit: proposal_audit.jsonl
+
+proposal:
+  iteration: 1
+  candidate_count: 10
+  # Self-directed inquiry is image-only. Use T2I, I2I, or null for automatic selection.
+  # Use T2I with a fresh library for GenEval, GenEval2, and WISE inquiry.
+  # Downstream task contracts can additionally request T2V, I2V, or V2V.
+  modality: null
+
+runtime:
+  comfyui_url: http://127.0.0.1:8188
+  memory_mode: online
+  iterations: 50
+  # Four retries after the initial attempt, or five attempts in total.
+  # Legacy max_attempts remains supported; do not configure both keys.
+  max_retries: 4
+  max_wall_time_seconds: 1200
+  dry_run: false

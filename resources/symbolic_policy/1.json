@@ -1,0 +1,488 @@
+{
+  "76": {
+    "inputs": {
+      "image": "colorful_logo.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "151": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "152": {
+    "inputs": {
+      "noise": [
+        "154",
+        0
+      ],
+      "guider": [
+        "158",
+        0
+      ],
+      "sampler": [
+        "151",
+        0
+      ],
+      "sigmas": [
+        "159",
+        0
+      ],
+      "latent_image": [
+        "157",
+        0
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "SamplerCustomAdvanced"
+    }
+  },
+  "153": {
+    "inputs": {
+      "samples": [
+        "152",
+        0
+      ],
+      "vae": [
+        "163",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "154": {
+    "inputs": {
+      "noise_seed": 453928630573102
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "RandomNoise"
+    }
+  },
+  "155": {
+    "inputs": {
+      "unet_name": "flux-2-klein-9b-fp8.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "156": {
+    "inputs": {
+      "clip_name": "qwen_3_8b_fp8mixed.safetensors",
+      "type": "flux2",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "Load CLIP"
+    }
+  },
+  "157": {
+    "inputs": {
+      "width": [
+        "160",
+        0
+      ],
+      "height": [
+        "160",
+        1
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyFlux2LatentImage",
+    "_meta": {
+      "title": "Empty Flux 2 Latent"
+    }
+  },
+  "158": {
+    "inputs": {
+      "cfg": 1,
+      "model": [
+        "155",
+        0
+      ],
+      "positive": [
+        "164",
+        0
+      ],
+      "negative": [
+        "161",
+        0
+      ]
+    },
+    "class_type": "CFGGuider",
+    "_meta": {
+      "title": "CFG Guider"
+    }
+  },
+  "159": {
+    "inputs": {
+      "steps": 4,
+      "width": [
+        "160",
+        0
+      ],
+      "height": [
+        "160",
+        1
+      ]
+    },
+    "class_type": "Flux2Scheduler",
+    "_meta": {
+      "title": "Flux2Scheduler"
+    }
+  },
+  "160": {
+    "inputs": {
+      "image": [
+        "162",
+        0
+      ]
+    },
+    "class_type": "GetImageSize",
+    "_meta": {
+      "title": "Get Image Size"
+    }
+  },
+  "161": {
+    "inputs": {
+      "conditioning": [
+        "166",
+        0
+      ],
+      "latent": [
+        "167",
+        0
+      ]
+    },
+    "class_type": "ReferenceLatent",
+    "_meta": {
+      "title": "Set Reference Latent"
+    }
+  },
+  "162": {
+    "inputs": {
+      "upscale_method": "nearest-exact",
+      "megapixels": 1,
+      "resolution_steps": 1,
+      "image": [
+        "76",
+        0
+      ]
+    },
+    "class_type": "ImageScaleToTotalPixels",
+    "_meta": {
+      "title": "Scale Image to Total Pixels"
+    }
+  },
+  "163": {
+    "inputs": {
+      "vae_name": "full_encoder_small_decoder.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "164": {
+    "inputs": {
+      "conditioning": [
+        "165",
+        0
+      ],
+      "latent": [
+        "167",
+        0
+      ]
+    },
+    "class_type": "ReferenceLatent",
+    "_meta": {
+      "title": "Set Reference Latent"
+    }
+  },
+  "165": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "156",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Positive Prompt)"
+    }
+  },
+  "166": {
+    "inputs": {
+      "conditioning": [
+        "165",
+        0
+      ]
+    },
+    "class_type": "ConditioningZeroOut",
+    "_meta": {
+      "title": "Conditioning Zero Out"
+    }
+  },
+  "167": {
+    "inputs": {
+      "pixels": [
+        "162",
+        0
+      ],
+      "vae": [
+        "163",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "172": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "156",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Positive Prompt)"
+    }
+  },
+  "174": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "175": {
+    "inputs": {
+      "noise_seed": 407886657080975
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "RandomNoise"
+    }
+  },
+  "176": {
+    "inputs": {
+      "cfg": 1,
+      "model": [
+        "155",
+        0
+      ],
+      "positive": [
+        "181",
+        0
+      ],
+      "negative": [
+        "187",
+        0
+      ]
+    },
+    "class_type": "CFGGuider",
+    "_meta": {
+      "title": "CFG Guider"
+    }
+  },
+  "177": {
+    "inputs": {
+      "steps": 4,
+      "width": [
+        "185",
+        0
+      ],
+      "height": [
+        "185",
+        1
+      ]
+    },
+    "class_type": "Flux2Scheduler",
+    "_meta": {
+      "title": "Flux2Scheduler"
+    }
+  },
+  "178": {
+    "inputs": {
+      "conditioning": [
+        "172",
+        0
+      ]
+    },
+    "class_type": "ConditioningZeroOut",
+    "_meta": {
+      "title": "Conditioning Zero Out"
+    }
+  },
+  "179": {
+    "inputs": {
+      "samples": [
+        "180",
+        0
+      ],
+      "vae": [
+        "163",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "180": {
+    "inputs": {
+      "noise": [
+        "175",
+        0
+      ],
+      "guider": [
+        "176",
+        0
+      ],
+      "sampler": [
+        "174",
+        0
+      ],
+      "sigmas": [
+        "177",
+        0
+      ],
+      "latent_image": [
+        "184",
+        0
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "SamplerCustomAdvanced"
+    }
+  },
+  "181": {
+    "inputs": {
+      "conditioning": [
+        "172",
+        0
+      ],
+      "latent": [
+        "182",
+        0
+      ]
+    },
+    "class_type": "ReferenceLatent",
+    "_meta": {
+      "title": "Set Reference Latent"
+    }
+  },
+  "182": {
+    "inputs": {
+      "pixels": [
+        "186",
+        0
+      ],
+      "vae": [
+        "163",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "184": {
+    "inputs": {
+      "width": [
+        "185",
+        0
+      ],
+      "height": [
+        "185",
+        1
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyFlux2LatentImage",
+    "_meta": {
+      "title": "Empty Flux 2 Latent"
+    }
+  },
+  "185": {
+    "inputs": {
+      "image": [
+        "186",
+        0
+      ]
+    },
+    "class_type": "GetImageSize",
+    "_meta": {
+      "title": "Get Image Size"
+    }
+  },
+  "186": {
+    "inputs": {
+      "upscale_method": "nearest-exact",
+      "megapixels": 1,
+      "resolution_steps": 1,
+      "image": [
+        "153",
+        0
+      ]
+    },
+    "class_type": "ImageScaleToTotalPixels",
+    "_meta": {
+      "title": "Scale Image to Total Pixels"
+    }
+  },
+  "187": {
+    "inputs": {
+      "conditioning": [
+        "178",
+        0
+      ],
+      "latent": [
+        "182",
+        0
+      ]
+    },
+    "class_type": "ReferenceLatent",
+    "_meta": {
+      "title": "Set Reference Latent"
+    }
+  },
+  "188": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "179",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}

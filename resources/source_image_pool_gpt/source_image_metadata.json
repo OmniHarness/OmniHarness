@@ -1,0 +1,938 @@
+{
+  "gpt_001_baker_kitchen": {
+    "image_id": "gpt_001_baker_kitchen",
+    "path": "images/gpt_001_baker_kitchen.png",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "caption": "A synthetic image of an adult baker dusting a wooden counter with flour in a small bakery.",
+    "semantic_tags": [
+      "adult",
+      "baker",
+      "flour",
+      "bakery"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting",
+      "Reference-Guided Generation"
+    ],
+    "sha256": "84e78281fc9b48b8e50df10347b4b48202c02f23c5f823b05ab0a224fc1c528f",
+    "size_bytes": 2133828,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_001_baker_kitchen.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_002_reader_window": {
+    "image_id": "gpt_002_reader_window",
+    "path": "images/gpt_002_reader_window.png",
+    "width": 1023,
+    "height": 1537,
+    "format": "png",
+    "caption": "A synthetic image of an adult with curly hair reading an open book beside a window.",
+    "semantic_tags": [
+      "adult",
+      "reader",
+      "book",
+      "window"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting",
+      "Reference-Guided Generation"
+    ],
+    "sha256": "059492ae21a5c882cdae2631c3c6e009e44c9adeed17fc7529896953407f785e",
+    "size_bytes": 2120151,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_002_reader_window.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_003_lavender_farm": {
+    "image_id": "gpt_003_lavender_farm",
+    "path": "images/gpt_003_lavender_farm.png",
+    "width": 1024,
+    "height": 1536,
+    "format": "png",
+    "caption": "A synthetic image of rows of lavender plants stretching toward a small farm shed.",
+    "semantic_tags": [
+      "lavender",
+      "farm",
+      "shed",
+      "flowers"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting"
+    ],
+    "sha256": "22a2709061f222947a4e9db66c8e60ba2b944a41ff2eea8f059c9796c0f6fbb7",
+    "size_bytes": 3075732,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_003_lavender_farm.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_004_violinist_room": {
+    "image_id": "gpt_004_violinist_room",
+    "path": "images/gpt_004_violinist_room.png",
+    "width": 1024,
+    "height": 1536,
+    "format": "png",
+    "caption": "A synthetic image of an adult violinist holding a violin and bow in a modest practice room.",
+    "semantic_tags": [
+      "adult",
+      "violinist",
+      "violin",
+      "room"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting",
+      "Reference-Guided Generation"
+    ],
+    "sha256": "0c0ec08c579a0eff734fa2d0e0bac05d43ee10a17be419f0f8b09b123be88bf1",
+    "size_bytes": 2053540,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_004_violinist_room.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_005_hiking_boots": {
+    "image_id": "gpt_005_hiking_boots",
+    "path": "images/gpt_005_hiking_boots.png",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "caption": "A synthetic image of a pair of worn hiking boots on a stone doorstep.",
+    "semantic_tags": [
+      "boots",
+      "footwear",
+      "stone",
+      "doorstep"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting",
+      "Reference-Guided Generation"
+    ],
+    "sha256": "0203bb23a0db027b9136df429b4de6949deaafb358df08124d441286912904b0",
+    "size_bytes": 2441787,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_005_hiking_boots.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_006_skater_plaza": {
+    "image_id": "gpt_006_skater_plaza",
+    "path": "images/gpt_006_skater_plaza.png",
+    "width": 1024,
+    "height": 1536,
+    "format": "png",
+    "caption": "A synthetic image of an adult skater standing beside a skateboard in an open urban plaza.",
+    "semantic_tags": [
+      "adult",
+      "skater",
+      "skateboard",
+      "plaza"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting",
+      "Reference-Guided Generation"
+    ],
+    "sha256": "c5663f22b86aad49523db111ab2da32f9270cad806b50ff104f610c355d4d0d3",
+    "size_bytes": 2362382,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_006_skater_plaza.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_007_bookshop_interior": {
+    "image_id": "gpt_007_bookshop_interior",
+    "path": "images/gpt_007_bookshop_interior.png",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "caption": "A synthetic image of a small bookshop interior with wooden shelves and a reading chair.",
+    "semantic_tags": [
+      "bookshop",
+      "interior",
+      "shelves",
+      "chair"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting"
+    ],
+    "sha256": "e365b21b0a804dbfd9b640887f4c5a231d58edc2821856276054021284a5360c",
+    "size_bytes": 2363509,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_007_bookshop_interior.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_008_bicycle_canal": {
+    "image_id": "gpt_008_bicycle_canal",
+    "path": "images/gpt_008_bicycle_canal.png",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "caption": "A synthetic image of a blue bicycle leaning against a railing beside a canal.",
+    "semantic_tags": [
+      "bicycle",
+      "blue",
+      "railing",
+      "canal"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting"
+    ],
+    "sha256": "815f67cfead96347de36a693420f8cedf3794d4f05c7592ac2886809bd870401",
+    "size_bytes": 2625900,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_008_bicycle_canal.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_009_train_station": {
+    "image_id": "gpt_009_train_station",
+    "path": "images/gpt_009_train_station.png",
+    "width": 1536,
+    "height": 1024,
+    "format": "png",
+    "caption": "A synthetic image of a small brick railway station with a covered empty platform.",
+    "semantic_tags": [
+      "station",
+      "architecture",
+      "brick",
+      "platform"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting"
+    ],
+    "sha256": "8f8e83c110ffd16de468017bd3056f2b0c6d300bc602556446d1b06f298d79a9",
+    "size_bytes": 3008702,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_009_train_station.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_010_butterfly_leaf": {
+    "image_id": "gpt_010_butterfly_leaf",
+    "path": "images/gpt_010_butterfly_leaf.png",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "caption": "A synthetic image of a butterfly resting on a large green leaf with dew drops.",
+    "semantic_tags": [
+      "butterfly",
+      "insect",
+      "leaf",
+      "dew"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting"
+    ],
+    "sha256": "8353c2015cf478ab6cd35575622d7fb1c048decc1eda260673157f1f8706c900",
+    "size_bytes": 2161401,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_010_butterfly_leaf.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_011_astronaut_garden": {
+    "image_id": "gpt_011_astronaut_garden",
+    "path": "images/gpt_011_astronaut_garden.png",
+    "width": 1402,
+    "height": 1122,
+    "format": "png",
+    "caption": "A synthetic image of a stylized clay figure of an astronaut standing in a tiny succulent garden.",
+    "semantic_tags": [
+      "astronaut",
+      "clay",
+      "succulents",
+      "stylized"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting"
+    ],
+    "sha256": "3efcebeaadc2306480df776b7671c25f86ef3e39d073f51c4b5b300a28e56e81",
+    "size_bytes": 2220874,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_011_astronaut_garden.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_012_hiker_trail": {
+    "image_id": "gpt_012_hiker_trail",
+    "path": "images/gpt_012_hiker_trail.png",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "caption": "A synthetic image of an adult hiker with a backpack pausing on a forest trail.",
+    "semantic_tags": [
+      "adult",
+      "hiker",
+      "backpack",
+      "forest"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting",
+      "Reference-Guided Generation"
+    ],
+    "sha256": "24d55ca1978cc009eb10f4f2da94efef868d23c730c472322098fa868ffa0e5c",
+    "size_bytes": 2800151,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_012_hiker_trail.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_013_lighthouse_coast": {
+    "image_id": "gpt_013_lighthouse_coast",
+    "path": "images/gpt_013_lighthouse_coast.png",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "caption": "A synthetic image of a white lighthouse on a rocky coast overlooking the sea.",
+    "semantic_tags": [
+      "lighthouse",
+      "coast",
+      "rocks",
+      "sea"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting"
+    ],
+    "sha256": "cdedd2f80b6420139293412a5ffdf57017c311ef40daba79af22da5438595105",
+    "size_bytes": 2248191,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_013_lighthouse_coast.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_014_courtyard_fountain": {
+    "image_id": "gpt_014_courtyard_fountain",
+    "path": "images/gpt_014_courtyard_fountain.png",
+    "width": 1536,
+    "height": 1024,
+    "format": "png",
+    "caption": "A synthetic image of a tiled courtyard with a central fountain and potted citrus trees.",
+    "semantic_tags": [
+      "courtyard",
+      "fountain",
+      "tiles",
+      "citrus"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting"
+    ],
+    "sha256": "4874df5bc8f23a7a2320f8e6258f0e1c8bc4d95637372476799f069b5acdfe55",
+    "size_bytes": 3488327,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_014_courtyard_fountain.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_015_tram_avenue": {
+    "image_id": "gpt_015_tram_avenue",
+    "path": "images/gpt_015_tram_avenue.png",
+    "width": 1024,
+    "height": 1536,
+    "format": "png",
+    "caption": "A synthetic image of a yellow tram traveling along a tree-lined avenue.",
+    "semantic_tags": [
+      "tram",
+      "yellow",
+      "avenue",
+      "trees"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting"
+    ],
+    "sha256": "d59703acfac809ec74e0c022d46bf0c5ea3d6ac3b27fb795374a8c7858b35ca8",
+    "size_bytes": 3108220,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_015_tram_avenue.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_016_desert_dunes": {
+    "image_id": "gpt_016_desert_dunes",
+    "path": "images/gpt_016_desert_dunes.png",
+    "width": 1024,
+    "height": 1535,
+    "format": "png",
+    "caption": "A synthetic image of sweeping sand dunes with wind-sculpted ridges and sparse desert shrubs.",
+    "semantic_tags": [
+      "desert",
+      "dunes",
+      "sand",
+      "shrubs"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting"
+    ],
+    "sha256": "c4a71821f7319d364a1cae8ffd3c278ba364f82bed89a93abc15678f5e932e61",
+    "size_bytes": 2306074,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_016_desert_dunes.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_017_fox_meadow": {
+    "image_id": "gpt_017_fox_meadow",
+    "path": "images/gpt_017_fox_meadow.png",
+    "width": 1024,
+    "height": 1536,
+    "format": "png",
+    "caption": "A synthetic image of a red fox standing in a meadow of small wildflowers.",
+    "semantic_tags": [
+      "fox",
+      "animal",
+      "meadow",
+      "wildflowers"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting",
+      "Reference-Guided Generation"
+    ],
+    "sha256": "62c1c0d30753b691099845173e9549bb565ef59f7e8981b7b221666ccf8cb6e5",
+    "size_bytes": 2443959,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_017_fox_meadow.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_018_glass_vase": {
+    "image_id": "gpt_018_glass_vase",
+    "path": "images/gpt_018_glass_vase.png",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "caption": "A synthetic image of a clear glass vase holding branches of white blossoms on a side table.",
+    "semantic_tags": [
+      "vase",
+      "glass",
+      "blossoms",
+      "table"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting"
+    ],
+    "sha256": "7397b53a8a6b18393734e1d16b2cad0842f77b1c949708471c7f607b5194d305",
+    "size_bytes": 2080079,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_018_glass_vase.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_019_gardener_greenhouse": {
+    "image_id": "gpt_019_gardener_greenhouse",
+    "path": "images/gpt_019_gardener_greenhouse.png",
+    "width": 1536,
+    "height": 1024,
+    "format": "png",
+    "caption": "A synthetic image of an adult gardener holding a watering can inside a greenhouse.",
+    "semantic_tags": [
+      "adult",
+      "gardener",
+      "watering_can",
+      "greenhouse"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting",
+      "Reference-Guided Generation"
+    ],
+    "sha256": "6b0936e61d0d68245cf2b4dc56d24bf599c81213d525f9536003623cc43e0cf7",
+    "size_bytes": 2706983,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_019_gardener_greenhouse.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_020_mangrove_lagoon": {
+    "image_id": "gpt_020_mangrove_lagoon",
+    "path": "images/gpt_020_mangrove_lagoon.png",
+    "width": 1024,
+    "height": 1536,
+    "format": "png",
+    "caption": "A synthetic image of mangrove trees with exposed roots in a shallow turquoise lagoon.",
+    "semantic_tags": [
+      "mangrove",
+      "trees",
+      "roots",
+      "lagoon"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting"
+    ],
+    "sha256": "f498d4e9acff1a64b0a1cc7421825d4bb232f49cfbe50cc42b7246444b2c50ee",
+    "size_bytes": 3028365,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_020_mangrove_lagoon.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_021_vintage_camera": {
+    "image_id": "gpt_021_vintage_camera",
+    "path": "images/gpt_021_vintage_camera.png",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "caption": "A synthetic image of a vintage film camera with a leather strap on a wooden desk.",
+    "semantic_tags": [
+      "camera",
+      "vintage",
+      "leather",
+      "desk"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting",
+      "Reference-Guided Generation"
+    ],
+    "sha256": "20ad6855c21ae54d063de6dc5151512255b35688f1ff0524cda9227f1a8140aa",
+    "size_bytes": 2075476,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_021_vintage_camera.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_022_mushroom_cottage": {
+    "image_id": "gpt_022_mushroom_cottage",
+    "path": "images/gpt_022_mushroom_cottage.png",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "caption": "A synthetic image of a storybook cottage built beneath a giant mushroom in a woodland clearing.",
+    "semantic_tags": [
+      "cottage",
+      "mushroom",
+      "woodland",
+      "illustration"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting"
+    ],
+    "sha256": "39ef1ae3565ad4ddc276230e162d9328a1e9022d37e7a0ed4b47686806ff2bab",
+    "size_bytes": 2923381,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_022_mushroom_cottage.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_023_floating_library": {
+    "image_id": "gpt_023_floating_library",
+    "path": "images/gpt_023_floating_library.png",
+    "width": 1402,
+    "height": 1122,
+    "format": "png",
+    "caption": "A synthetic image of a whimsical floating island with a little library and trailing plants.",
+    "semantic_tags": [
+      "floating_island",
+      "library",
+      "plants",
+      "illustration"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting"
+    ],
+    "sha256": "dc74f809ab76f2bc89afba710a51a0363eea9c048126c85793924395f9f01bbc",
+    "size_bytes": 2498841,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_023_floating_library.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_024_otter_river": {
+    "image_id": "gpt_024_otter_river",
+    "path": "images/gpt_024_otter_river.png",
+    "width": 1024,
+    "height": 1536,
+    "format": "png",
+    "caption": "A synthetic image of an otter resting on a wet stone at the edge of a river.",
+    "semantic_tags": [
+      "otter",
+      "animal",
+      "river",
+      "stone"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting",
+      "Reference-Guided Generation"
+    ],
+    "sha256": "399b92fc69a7029abf4c9d0b46d120579443f3a076fabd23bbe20d2fb97dc34d",
+    "size_bytes": 2782201,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_024_otter_river.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_025_turtle_pond": {
+    "image_id": "gpt_025_turtle_pond",
+    "path": "images/gpt_025_turtle_pond.png",
+    "width": 1024,
+    "height": 1536,
+    "format": "png",
+    "caption": "A synthetic image of a turtle on a fallen log above a pond covered with lily pads.",
+    "semantic_tags": [
+      "turtle",
+      "animal",
+      "pond",
+      "lily_pads"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting",
+      "Reference-Guided Generation"
+    ],
+    "sha256": "7223f3d3ab30910856e98637bd81f31a38feb973e62068f94ab526832edb594e",
+    "size_bytes": 2449071,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_025_turtle_pond.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_026_terraced_fields": {
+    "image_id": "gpt_026_terraced_fields",
+    "path": "images/gpt_026_terraced_fields.png",
+    "width": 1254,
+    "height": 1254,
+    "format": "png",
+    "caption": "A synthetic image of green terraced fields stepping down a hillside with a narrow footpath.",
+    "semantic_tags": [
+      "terraces",
+      "fields",
+      "hillside",
+      "path"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting"
+    ],
+    "sha256": "32415f2f87ea393139d8f6a1c431ff5aaec6a7d4aca4bfe95fe1bea988ca864f",
+    "size_bytes": 2956600,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_026_terraced_fields.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_027_waterfall_rocks": {
+    "image_id": "gpt_027_waterfall_rocks",
+    "path": "images/gpt_027_waterfall_rocks.png",
+    "width": 1024,
+    "height": 1535,
+    "format": "png",
+    "caption": "A synthetic image of a waterfall spilling over dark rocks into a forest pool.",
+    "semantic_tags": [
+      "waterfall",
+      "rocks",
+      "forest",
+      "pool"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting"
+    ],
+    "sha256": "14fba4bcb6d8ca96d638acf4b33abb05d88b8a4510c2a5eaefc86678bd50a19d",
+    "size_bytes": 2807934,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_027_waterfall_rocks.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_028_scooter_courtyard": {
+    "image_id": "gpt_028_scooter_courtyard",
+    "path": "images/gpt_028_scooter_courtyard.png",
+    "width": 1024,
+    "height": 1536,
+    "format": "png",
+    "caption": "A synthetic image of a mint-green scooter parked in a cobbled courtyard.",
+    "semantic_tags": [
+      "scooter",
+      "green",
+      "courtyard",
+      "cobblestone"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting"
+    ],
+    "sha256": "ef113f16055935adb6a53f24b42e5cde8c7d1347289f87ed31703dc318e312df",
+    "size_bytes": 2790396,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_028_scooter_courtyard.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_029_loft_studio": {
+    "image_id": "gpt_029_loft_studio",
+    "path": "images/gpt_029_loft_studio.png",
+    "width": 1024,
+    "height": 1536,
+    "format": "png",
+    "caption": "A synthetic image of an artist studio with an easel and paint jars near tall industrial windows.",
+    "semantic_tags": [
+      "studio",
+      "interior",
+      "easel",
+      "paint"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting"
+    ],
+    "sha256": "6035093141648292e4c132ab63f66fdb682b072444171e2275d2bef1f716eb49",
+    "size_bytes": 2319608,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_029_loft_studio.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_030_deer_forest": {
+    "image_id": "gpt_030_deer_forest",
+    "path": "images/gpt_030_deer_forest.png",
+    "width": 1023,
+    "height": 1537,
+    "format": "png",
+    "caption": "A synthetic image of a deer standing between tall trunks in a quiet forest.",
+    "semantic_tags": [
+      "deer",
+      "animal",
+      "forest",
+      "trees"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting",
+      "Reference-Guided Generation"
+    ],
+    "sha256": "1915fa55e7365fdd7edc2e5099737143c8293f3f38fe000586e70ad9d19cc83c",
+    "size_bytes": 2871435,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_030_deer_forest.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_031_terrarium": {
+    "image_id": "gpt_031_terrarium",
+    "path": "images/gpt_031_terrarium.png",
+    "width": 1536,
+    "height": 1024,
+    "format": "png",
+    "caption": "A synthetic image of a miniature terrarium with moss and stones inside a glass jar.",
+    "semantic_tags": [
+      "terrarium",
+      "moss",
+      "stones",
+      "glass"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting"
+    ],
+    "sha256": "70ee6dea2a6966a967a7861daa8b427423e388dce4ae8487cb367b6cf889e720",
+    "size_bytes": 2348051,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_031_terrarium.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_032_fish_linocut": {
+    "image_id": "gpt_032_fish_linocut",
+    "path": "images/gpt_032_fish_linocut.png",
+    "width": 1024,
+    "height": 1536,
+    "format": "png",
+    "caption": "A synthetic image of a two-color linocut illustration of a fish among flowing aquatic plants.",
+    "semantic_tags": [
+      "fish",
+      "linocut",
+      "plants",
+      "illustration"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting"
+    ],
+    "sha256": "2e2c677da55e9c6ee91d1160c8483c7443f3f90e7d2e4e15bd928cf9b3dce614",
+    "size_bytes": 3171872,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_032_fish_linocut.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "gpt_033_sewing_machine": {
+    "image_id": "gpt_033_sewing_machine",
+    "path": "images/gpt_033_sewing_machine.png",
+    "width": 1024,
+    "height": 1536,
+    "format": "png",
+    "caption": "A synthetic image of a mechanical sewing machine with fabric and thread spools on a workbench.",
+    "semantic_tags": [
+      "sewing_machine",
+      "fabric",
+      "thread",
+      "workbench"
+    ],
+    "quality_flags": [
+      "ai_generated"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting",
+      "Image Outpainting"
+    ],
+    "sha256": "2c0ba17a8048f7b88e4ca0e5b679994d64db65233de75ea1620a24a071d2ddb0",
+    "size_bytes": 2093383,
+    "source_dataset": "GPT-Image-2",
+    "source_relative_path": "images/gpt_033_sewing_machine.png",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  }
+}

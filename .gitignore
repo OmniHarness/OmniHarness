@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.wheelhouse*/
+.venv/
+venv/
+
+# Credentials and machine-local Codex configuration
+.env
+.env.*
+config.yaml
+config.local.yaml
+*.pem
+*.key
+auth.json
+.codex/
+
+# Runtime outputs and mutable memory
+runs/
+outputs/
+results/
+task_contract.json
+proposal_audit.jsonl
+resources/symbolic_policy/.omniharness_state.json
+resources/symbolic_policy/.omniharness.lock
+*.tmp
+
+# Local third-party benchmark material
+# These files remain available to local experiments but are intentionally kept
+# out of Git until their individual redistribution terms are satisfied.
+bench data/
+resources/source_image_pool_comfybench/images/
+resources/source_image_pool_gpt/images/
+*.baiduyun.uploading.cfg
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini

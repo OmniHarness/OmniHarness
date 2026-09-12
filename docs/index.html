@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f7f2" />
+    <meta name="description" content="OmniHarness combines symbolic policy learning, feedback-guided execution, and self-directed inquiry for generalizable visual generation." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="OmniHarness: Harnessing Generalizable Visual Generation via Symbolic Policy Learning" />
+    <meta property="og:description" content="Symbolic policies that generalize across visual generation task families and improve through execution feedback." />
+    <meta property="og:image" content="assets/omniharness-overview.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="OmniHarness: Harnessing Generalizable Visual Generation via Symbolic Policy Learning" />
+    <meta name="twitter:description" content="Symbolic policy learning, feedback-guided execution, and self-directed inquiry." />
+    <meta name="twitter:image" content="assets/omniharness-overview.jpg" />
+    <title>OmniHarness: Harnessing Generalizable Visual Generation via Symbolic Policy Learning</title>
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="OmniHarness home"><span class="wordmark-mark" aria-hidden="true">OH</span><span>OmniHarness</span></a>
+      <nav aria-label="Primary navigation">
+        <a href="#overview">Overview</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#citation">Citation</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top" aria-labelledby="paper-title">
+        <div class="hero-kicker"><span></span> Symbolic policy learning</div>
+        <h1 id="paper-title"><span class="accent">OmniHarness</span>: Harnessing Generalizable Visual Generation via Symbolic Policy Learning</h1>
+        <p class="hero-deck">OmniHarness learns symbolic policies for visual generation task families. The harness adapts them with intermediate verification and localized recovery. Self-directed inquiry supplies experience before downstream tasks arrive.</p>
+        <p class="authors">Anonymous Authors</p>
+        <div class="hero-principles" aria-label="OmniHarness mechanisms">
+          <span>Symbolic Policy Learning</span>
+          <span>Feedback-Guided Execution</span>
+          <span>Self-Directed Inquiry</span>
+        </div>
+      </section>
+
+      <section class="content-shell reveal" id="overview" aria-labelledby="overview-title">
+        <div class="section-label"><span>01</span><p>Overview</p></div>
+        <div class="section-intro">
+          <p class="eyebrow">Practice before downstream tasks</p>
+          <h2 id="overview-title">Explore capabilities. Learn reusable policies.</h2>
+          <p class="lead">The harness coordinates reasoning, execution, memory, and feedback. Symbolic policies encode shared procedures and applicability conditions for task families, with instance-specific inputs removed. Execution feedback refines the policy library while model parameters remain fixed.</p>
+        </div>
+        <figure class="paper-figure full-bleed">
+          <img src="assets/omniharness-overview.jpg" alt="Overview of OmniHarness and visual generation capabilities" width="4889" height="4049" />
+          <figcaption>Self-directed inquiry and feedback-guided execution support symbolic policy learning for generalizable visual generation.</figcaption>
+        </figure>
+      </section>
+
+      <section class="wide-section reveal" aria-labelledby="paradigm-title">
+        <div class="section-heading">
+          <p class="eyebrow">Generalizable visual generation</p>
+          <h2 id="paradigm-title">Adapt procedures to each task.</h2>
+          <p>Unified models support direct generation, and multi-agent systems add planning and collaboration. OmniHarness instantiates, adapts, and composes symbolic policies for new tasks and learns from execution feedback.</p>
+        </div>
+        <figure class="paper-figure framed">
+          <img src="assets/paradigm-comparison.jpg" alt="Comparison of unified multimodal models, multi-agent systems, and OmniHarness" loading="lazy" width="4762" height="2254" />
+          <figcaption>OmniHarness combines self-directed inquiry and feedback-guided execution to learn symbolic policies for visual generation task families.</figcaption>
+        </figure>
+      </section>
+
+      <section class="content-shell reveal" id="method" aria-labelledby="method-title">
+        <div class="section-label"><span>02</span><p>Method</p></div>
+        <div class="section-intro">
+          <p class="eyebrow">Three mechanisms</p>
+          <h2 id="method-title">Learn policies. Verify execution. Explore capabilities.</h2>
+          <p class="lead">The implementation uses a Codex reasoning backend and ComfyUI execution. Plans, workflow templates, intermediate artifacts, and feedback guide task-specific generation and local repair.</p>
+        </div>
+        <figure class="paper-figure full-bleed">
+          <img src="assets/runtime-architecture.jpg" alt="Architecture of OmniHarness for symbolic policy learning" loading="lazy" width="4833" height="2097" />
+          <figcaption>The Policy Library comprises a Workflow Library and a Failure Library. Online execution refines policies, while frozen snapshots support reuse without library updates.</figcaption>
+        </figure>
+        <div class="method-cards">
+          <article class="method-card card-mint">
+            <span class="card-index">01</span><div class="card-icon" aria-hidden="true">∞</div>
+            <h3>Symbolic Policy Learning</h3>
+            <p>Abstract verified executions into policies for task families. Retain shared procedures and applicability conditions, remove instance-specific inputs, and refine policies through execution feedback.</p>
+            <code>verified execution → reusable policy</code>
+          </article>
+          <article class="method-card card-rose">
+            <span class="card-index">02</span><div class="card-icon" aria-hidden="true">⌘</div>
+            <h3>Feedback-Guided Execution</h3>
+            <p>Instantiate, adapt, and compose policies for each task. Intermediate verification guides workflow refinement and localized recovery while preserving verified steps.</p>
+            <code>plan → execute → verify → recover</code>
+          </article>
+          <article class="method-card card-sky">
+            <span class="card-index">03</span><div class="card-icon" aria-hidden="true">✦</div>
+            <h3>Self-Directed Inquiry</h3>
+            <p>Generate practice tasks before downstream objectives are specified. Exploration within Reach balances capability novelty and estimated learnability to probe capability limits.</p>
+            <code>arg max 𝒩(τ) · 𝒞(τ)</code>
+          </article>
+        </div>
+        <p class="method-note">Self-directed inquiry is motivated by Chinese philosopher Wang Yangming's interpretation of <em>the investigation of things and the extension of knowledge</em>. The Workflow Library stores reusable policy templates; the Failure Library stores failure evidence and corrective strategies. Task inputs are bound before execution. Exporting the inquiry state produces a frozen policy snapshot for reuse. Controlled evaluations start inquiry from an empty library.</p>
+      </section>
+
+      <section class="results-section reveal" id="results" aria-labelledby="results-title">
+        <div class="results-inner">
+          <div class="section-label light"><span>03</span><p>Results</p></div>
+          <div class="section-intro light-copy">
+            <p class="eyebrow">Paper-reported results</p>
+            <h2 id="results-title">Six visual generation benchmarks.</h2>
+            <p class="lead">The values below are reported in the paper across workflow construction, compositional generation, knowledge-grounded synthesis, and reasoning-guided editing.</p>
+          </div>
+          <div class="benchmark-grid">
+            <article class="benchmark-card featured"><div><span>ComfyBench</span><small>Workflow construction</small></div><strong>92.5%</strong><p>Total Resolve with a 100.0% Pass rate.</p><div class="mini-track"><span style="width:92.5%"></span></div></article>
+            <article class="benchmark-card"><div><span>GenEval</span><small>Composition</small></div><strong>0.997</strong><p>Overall compositional generation score.</p></article>
+            <article class="benchmark-card"><div><span>GenEval2</span><small>Fine-grained relations</small></div><strong>94.0</strong><p>Attribute and Count scores.</p></article>
+            <article class="benchmark-card"><div><span>WISE</span><small>World knowledge</small></div><strong>0.86</strong><p>Overall WiScore.</p></article>
+            <article class="benchmark-card"><div><span>Reason-Edit</span><small>Image editing</small></div><strong>24.554</strong><p>CLIP score on Understanding scenarios.</p></article>
+            <article class="benchmark-card"><div><span>KRIS-Bench</span><small>Knowledge intensive</small></div><strong>77.33</strong><p>Overall score across generation and editing.</p></article>
+          </div>
+          <div class="gallery-block" aria-labelledby="gallery-title">
+            <div class="gallery-header">
+              <div><p class="eyebrow">Paper examples</p><h3 id="gallery-title">Diverse visual tasks.</h3></div>
+              <div class="gallery-tabs" role="group" aria-label="Choose a result category">
+                <button class="gallery-tab is-active" type="button" aria-pressed="true" data-image="assets/creative-workflows.jpg" data-alt="Creative ComfyBench workflow examples" data-caption="Creative workflow examples across posters, letters, comics, and book covers.">Creative</button>
+                <button class="gallery-tab" type="button" aria-pressed="false" data-image="assets/complex-workflows.jpg" data-alt="Complex ComfyBench workflow examples" data-caption="Multi-step editing, restoration, style transfer, and content preservation.">Complex</button>
+                <button class="gallery-tab" type="button" aria-pressed="false" data-image="assets/text-to-image-results.jpg" data-alt="Text-to-image examples on GenEval, GenEval2, and WISE" data-caption="Compositional and knowledge-grounded text-to-image generation.">Text to image</button>
+                <button class="gallery-tab" type="button" aria-pressed="false" data-image="assets/reason-edit-results.jpg" data-alt="Reason-Edit image editing examples" data-caption="Image editing from explicit cues and reasoning-based instructions.">Image editing</button>
+              </div>
+            </div>
+            <figure class="gallery-figure"><img id="gallery-image" src="assets/creative-workflows.jpg" alt="Creative ComfyBench workflow examples" loading="lazy" /><figcaption id="gallery-caption">Creative workflow examples across posters, letters, comics, and book covers.</figcaption></figure>
+          </div>
+          <div class="ablation-block">
+            <div class="ablation-copy">
+              <p class="eyebrow">Paper-reported ablations</p><h3>Practice and downstream updates.</h3>
+              <p>Removing self-directed inquiry reduces Total Resolve from 92.5% to 87.0%. Disabling online policy updates reduces it to 88.5%, while task-specific adaptation remains active.</p>
+              <div class="ablation-stats"><span><strong>+22.5</strong> Creative points with inquiry</span><span><strong>43</strong> workflow policies after 50 inquiry iterations</span></div>
+            </div>
+            <figure><img src="assets/inquiry-iterations.png" alt="Reported Resolve rate over different inquiry budgets" loading="lazy" width="2000" height="1008" /><figcaption>Reported Resolve rates over different inquiry budgets.</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="citation-section" id="citation" aria-labelledby="citation-title">
+        <div class="citation-inner">
+          <div><p class="eyebrow">Citation</p><h2 id="citation-title">OmniHarness.</h2><p>Anonymous citation metadata.</p></div>
+          <div class="bibtex-card">
+            <div class="bibtex-toolbar"><span>BibTeX</span><button id="copy-bibtex" type="button">Copy</button></div>
+            <pre><code id="bibtex">@misc{omniharness2026,
+  title  = {OmniHarness: Harnessing Generalizable Visual Generation
+            via Symbolic Policy Learning},
+  author = {Anonymous Authors},
+  year   = {2026}
+}</code></pre>
+            <p class="copy-status" id="copy-status" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="wordmark footer-mark" href="#top"><span class="wordmark-mark" aria-hidden="true">OH</span><span>OmniHarness</span></a>
+      <p>Generalizable visual generation via symbolic policy learning.</p>
+    </footer>
+  </body>
+</html>

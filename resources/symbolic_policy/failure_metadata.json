@@ -1,0 +1,578 @@
+{
+    "1": {
+        "Failure ID": "F001",
+        "Pattern ID": "P01-Compound-Requirement-Undercoverage",
+        "Task ID": "022",
+        "Task Name": "space_station",
+        "Workflow ID": "35",
+        "Modality": "T2I",
+        "Capability Category": "Futuristic & Fantasy Generation",
+        "Failure Context": {
+            "Task Objective": "Generate a futuristic space station orbiting Earth with spacecraft visibly docked.",
+            "Source Input": null,
+            "Selected Attempt": 1,
+            "Critical Constraints": "Earth must be visible and one or more spacecraft must be visibly docked to the station."
+        },
+        "Failed Workflow": {
+            "Workflow Name": "Futuristic_Scene_Generation",
+            "Workflow Source Code": "35.json",
+            "Failed Stage": "Primary text-to-image generation",
+            "Execution Plan": "complete_image_batch/tasks/022_space_station/plan.json",
+            "Run Manifest": "complete_image_batch/tasks/022_space_station/run_manifest.json"
+        },
+        "Failure Evidence": {
+            "Generated Output": "complete_image_batch/tasks/022_space_station/output_01_node_71_images.png",
+            "Verifier Result": "Fail",
+            "Observed Failure": "The station and Earth were rendered correctly, but no docked spacecraft were visible.",
+            "Evaluation Record": "complete_image_batch/comfybench_evaluation/outcome_full/result.json#022"
+        },
+        "Root Cause": "The single-pass prompt satisfied the dominant scene concept but underweighted the secondary object-and-relation constraint.",
+        "Workflow Antipattern": "Relying on a broad prompt to satisfy several independently verifiable objects and spatial relations without object-level verification.",
+        "Remedy": "Make docked spacecraft an explicit counted foreground requirement, strengthen the docking relation, and verify object presence; if absent, add or inpaint the spacecraft in a second stage.",
+        "Applicable Scope": "T2I scenes with compound object lists, count constraints, or explicit spatial relations."
+    },
+    "2": {
+        "Failure ID": "F002",
+        "Pattern ID": "P02-Prompt-Only-Localized-Removal",
+        "Task ID": "060",
+        "Task Name": "table_plate_removal",
+        "Workflow ID": "16",
+        "Modality": "I2I",
+        "Capability Category": "Localized Image Editing",
+        "Failure Context": {
+            "Task Objective": "Remove one plate together with all food inside it from a crowded dining table.",
+            "Source Input": "dish_table.png",
+            "Selected Attempt": 1,
+            "Critical Constraints": "The target plate and its contents must be absent while the rest of the table remains coherent."
+        },
+        "Failed Workflow": {
+            "Workflow Name": "Scene_Detail_Removal",
+            "Workflow Source Code": "16.json",
+            "Failed Stage": "Localized object removal",
+            "Execution Plan": "complete_image_batch/tasks/060_table_plate_removal/plan.json",
+            "Run Manifest": "complete_image_batch/tasks/060_table_plate_removal/run_manifest.json"
+        },
+        "Failure Evidence": {
+            "Generated Output": "complete_image_batch/tasks/060_table_plate_removal/output_01_node_170_images.png",
+            "Verifier Result": "Fail",
+            "Observed Failure": "The plate and food remained visible despite an otherwise valid high-resolution output.",
+            "Evaluation Record": "complete_image_batch/comfybench_evaluation/outcome_full/result.json#060"
+        },
+        "Root Cause": "Reference-preserving prompt-only repainting did not isolate or suppress the target object strongly enough.",
+        "Workflow Antipattern": "Attempting precise removal in a cluttered scene without a target mask, segmentation, or an explicit absence check.",
+        "Remedy": "Segment or mask the complete plate-and-food region, use masked inpainting with surrounding-table context, and verify that the target region no longer contains the object.",
+        "Applicable Scope": "I2I removal of medium or small objects in cluttered scenes, especially when object boundaries include contained items."
+    },
+    "3": {
+        "Failure ID": "F003",
+        "Pattern ID": "P02-Prompt-Only-Localized-Removal",
+        "Task ID": "061",
+        "Task Name": "table_fork_removal",
+        "Workflow ID": "16",
+        "Modality": "I2I",
+        "Capability Category": "Localized Image Editing",
+        "Failure Context": {
+            "Task Objective": "Remove the fork from a table filled with dishes.",
+            "Source Input": "dish_table.png",
+            "Selected Attempt": 1,
+            "Critical Constraints": "The small fork must be absent without changing unrelated table content."
+        },
+        "Failed Workflow": {
+            "Workflow Name": "Scene_Detail_Removal",
+            "Workflow Source Code": "16.json",
+            "Failed Stage": "Small-object removal",
+            "Execution Plan": "complete_image_batch/tasks/061_table_fork_removal/plan.json",
+            "Run Manifest": "complete_image_batch/tasks/061_table_fork_removal/run_manifest.json"
+        },
+        "Failure Evidence": {
+            "Generated Output": "complete_image_batch/tasks/061_table_fork_removal/output_01_node_170_images.png",
+            "Verifier Result": "Fail",
+            "Observed Failure": "The fork remained visible; the workflow mainly preserved and upscaled the reference image.",
+            "Evaluation Record": "complete_image_batch/comfybench_evaluation/outcome_full/result.json#061"
+        },
+        "Root Cause": "The small target occupied too little visual area for global prompt conditioning to overcome reference preservation.",
+        "Workflow Antipattern": "Using global semantic editing for a thin, low-area object without localizing it.",
+        "Remedy": "Detect or manually mask the fork with a modest dilation, inpaint the masked region from neighboring table texture, and run an object-absence verifier.",
+        "Applicable Scope": "I2I removal of utensils, wires, text marks, and other thin or small objects."
+    },
+    "4": {
+        "Failure ID": "F004",
+        "Pattern ID": "P01-Compound-Requirement-Undercoverage",
+        "Task ID": "065",
+        "Task Name": "stream_bridge_addition",
+        "Workflow ID": "38",
+        "Modality": "I2I",
+        "Capability Category": "Localized Image Editing",
+        "Failure Context": {
+            "Task Objective": "Add a single-plank bridge over a mountain stream.",
+            "Source Input": "mountain_stream.png",
+            "Selected Attempt": 1,
+            "Critical Constraints": "The bridge must consist of one plank and must not include railings or a multi-plank deck."
+        },
+        "Failed Workflow": {
+            "Workflow Name": "Scene_Detail_Addition",
+            "Workflow Source Code": "38.json",
+            "Failed Stage": "Localized object addition",
+            "Execution Plan": "complete_image_batch/tasks/065_stream_bridge_addition/plan.json",
+            "Run Manifest": "complete_image_batch/tasks/065_stream_bridge_addition/run_manifest.json"
+        },
+        "Failure Evidence": {
+            "Generated Output": "complete_image_batch/tasks/065_stream_bridge_addition/output_01_node_170_images.png",
+            "Verifier Result": "Fail",
+            "Observed Failure": "A multi-plank bridge with railings was added instead of a single plank.",
+            "Evaluation Record": "complete_image_batch/comfybench_evaluation/outcome_full/result.json#065"
+        },
+        "Root Cause": "The workflow generated the correct object class but did not bind the required structural attributes tightly enough.",
+        "Workflow Antipattern": "Treating an attribute-constrained object request as generic object addition and checking only object presence.",
+        "Remedy": "Use a localized placement mask and an explicit positive/negative specification such as 'one plain wooden plank, no rails, no deck boards'; verify both presence and attributes.",
+        "Applicable Scope": "Localized additions with exact shape, count, material, or forbidden-attribute constraints."
+    },
+    "5": {
+        "Failure ID": "F005",
+        "Pattern ID": "P02-Prompt-Only-Localized-Removal",
+        "Task ID": "069",
+        "Task Name": "stream_rock_removal",
+        "Workflow ID": "16",
+        "Modality": "I2I",
+        "Capability Category": "Localized Image Editing",
+        "Failure Context": {
+            "Task Objective": "Remove the rock in the mountain stream.",
+            "Source Input": "mountain_stream.png",
+            "Selected Attempt": 2,
+            "Critical Constraints": "The intended stream rock must be absent and replaced by plausible flowing water."
+        },
+        "Failed Workflow": {
+            "Workflow Name": "Scene_Detail_Removal",
+            "Workflow Source Code": "16.json",
+            "Failed Stage": "Localized object removal after retry",
+            "Execution Plan": "complete_image_batch/tasks/069_stream_rock_removal/plan.json",
+            "Run Manifest": "complete_image_batch/tasks/069_stream_rock_removal/run_manifest.json"
+        },
+        "Failure Evidence": {
+            "Generated Output": "complete_image_batch/tasks/069_stream_rock_removal/retry_01/output_01_node_170_images.png",
+            "Verifier Result": "Fail",
+            "Observed Failure": "The official evaluator still found visible rocks in the stream after the retry.",
+            "Evaluation Record": "complete_image_batch/comfybench_evaluation/outcome_full/result.json#069"
+        },
+        "Root Cause": "The target description was ambiguous in a scene containing multiple rocks, and the retry lacked a persistent target-region specification.",
+        "Workflow Antipattern": "Retrying a localized removal through prompt changes alone without identifying the exact target instance.",
+        "Remedy": "Bind the task to a target bounding box or mask, retain that mask across retries, inpaint with water-specific context, and verify the same region rather than the whole image.",
+        "Applicable Scope": "Instance-specific removal when several visually similar objects occur in the source image."
+    },
+    "6": {
+        "Failure ID": "F006",
+        "Pattern ID": "P03-Reference-Content-Leakage",
+        "Task ID": "075",
+        "Task Name": "castle_style_cloning",
+        "Workflow ID": "39",
+        "Modality": "I2I",
+        "Capability Category": "Reference-Guided Generation",
+        "Failure Context": {
+            "Task Objective": "Use a castle's architectural style to generate a large church.",
+            "Source Input": "large_castle.png",
+            "Selected Attempt": 1,
+            "Critical Constraints": "Transfer architectural style but change the semantic object identity from castle to church."
+        },
+        "Failed Workflow": {
+            "Workflow Name": "Style_Guided_Image_Generation",
+            "Workflow Source Code": "39.json",
+            "Failed Stage": "Style-guided target generation",
+            "Execution Plan": "complete_image_batch/tasks/075_castle_style_cloning/plan.json",
+            "Run Manifest": "complete_image_batch/tasks/075_castle_style_cloning/run_manifest.json"
+        },
+        "Failure Evidence": {
+            "Generated Output": "complete_image_batch/tasks/075_castle_style_cloning/output_01_node_37_images.png",
+            "Verifier Result": "Fail",
+            "Observed Failure": "The output retained the reference architectural style but remained a castle rather than becoming a church.",
+            "Evaluation Record": "complete_image_batch/comfybench_evaluation/outcome_full/result.json#075"
+        },
+        "Root Cause": "Reference conditioning transferred source semantics together with style and overpowered the requested target identity.",
+        "Workflow Antipattern": "Using a full reference latent as a style representation when source and target object classes must differ.",
+        "Remedy": "Separate style features from content, strengthen church-specific structure and text conditioning, reduce semantic reference strength, and verify target class before accepting style similarity.",
+        "Applicable Scope": "Reference-guided generation where style should transfer but object identity, scene type, or subject category must change."
+    },
+    "7": {
+        "Failure ID": "F007",
+        "Pattern ID": "P04-Missing-Structural-Control",
+        "Task ID": "078",
+        "Task Name": "man_pose_cloning",
+        "Workflow ID": "2",
+        "Modality": "I2I",
+        "Capability Category": "Reference-Guided Generation",
+        "Failure Context": {
+            "Task Objective": "Generate a realistic standing robot with the same pose as a reference man.",
+            "Source Input": "jacket_man.jpg",
+            "Selected Attempt": 1,
+            "Critical Constraints": "The robot's asymmetric arm and hand configuration must match the reference pose."
+        },
+        "Failed Workflow": {
+            "Workflow Name": "Pose_Guided_Image_Generation",
+            "Workflow Source Code": "2.json",
+            "Failed Stage": "Pose transfer",
+            "Execution Plan": "complete_image_batch/tasks/078_man_pose_cloning/plan.json",
+            "Run Manifest": "complete_image_batch/tasks/078_man_pose_cloning/run_manifest.json"
+        },
+        "Failure Evidence": {
+            "Generated Output": "complete_image_batch/tasks/078_man_pose_cloning/output_01_node_170_images.png",
+            "Verifier Result": "Fail",
+            "Observed Failure": "The robot was realistic and standing, but both arms were symmetric and did not match the man's pose.",
+            "Evaluation Record": "complete_image_batch/comfybench_evaluation/outcome_full/result.json#078"
+        },
+        "Root Cause": "Generic reference conditioning did not provide an explicit skeletal or keypoint constraint.",
+        "Workflow Antipattern": "Calling a workflow pose-guided while relying only on appearance/reference latents rather than a pose representation.",
+        "Remedy": "Extract pose keypoints with OpenPose or DWPose, condition generation with pose ControlNet or an equivalent structural controller, and compare keypoint geometry before acceptance.",
+        "Applicable Scope": "Cross-subject pose transfer, especially human-to-robot or other large appearance changes."
+    },
+    "8": {
+        "Failure ID": "F008",
+        "Pattern ID": "P05-Missing-Spatial-Layout-Control",
+        "Task ID": "079",
+        "Task Name": "pagoda_area_composition",
+        "Workflow ID": "14",
+        "Modality": "T2I",
+        "Capability Category": "Position-Constrained Generation",
+        "Failure Context": {
+            "Task Objective": "Generate a pagoda in a quiet forest with the pagoda in the left half and trees elsewhere.",
+            "Source Input": null,
+            "Selected Attempt": 1,
+            "Critical Constraints": "The pagoda centroid must lie in the left half of the image."
+        },
+        "Failed Workflow": {
+            "Workflow Name": "Position_Constrained_Generation",
+            "Workflow Source Code": "14.json",
+            "Failed Stage": "Spatial composition",
+            "Execution Plan": "complete_image_batch/tasks/079_pagoda_area_composition/plan.json",
+            "Run Manifest": "complete_image_batch/tasks/079_pagoda_area_composition/run_manifest.json"
+        },
+        "Failure Evidence": {
+            "Generated Output": "complete_image_batch/tasks/079_pagoda_area_composition/output_01_node_71_images.png",
+            "Verifier Result": "Fail",
+            "Observed Failure": "The forest and pagoda were correct, but the pagoda was centered instead of placed in the left half.",
+            "Evaluation Record": "complete_image_batch/comfybench_evaluation/outcome_full/result.json#079"
+        },
+        "Root Cause": "Text conditioning alone was too weak to override the model's center-composition prior.",
+        "Workflow Antipattern": "Expressing measurable layout constraints only in natural language without regional conditioning or layout verification.",
+        "Remedy": "Provide a left-half bounding region or layout mask through regional conditioning, then detect the pagoda and assert that its centroid satisfies the requested region.",
+        "Applicable Scope": "T2I tasks with left/right/top/bottom placement, bounding regions, or relative spatial constraints."
+    },
+    "9": {
+        "Failure ID": "F009",
+        "Pattern ID": "P06-Outpainting-Fill-Or-Dimension-Failure",
+        "Task ID": "082",
+        "Task Name": "man_image_extension",
+        "Workflow ID": "15",
+        "Modality": "I2I",
+        "Capability Category": "Image Outpainting",
+        "Failure Context": {
+            "Task Objective": "Extend a portrait downward by 256 pixels to reveal a more complete view of the man.",
+            "Source Input": "young_man.jpg",
+            "Selected Attempt": 1,
+            "Critical Constraints": "Only the bottom must be extended by exactly 256 pixels and the new region must contain coherent body content."
+        },
+        "Failed Workflow": {
+            "Workflow Name": "Image_Outpainting",
+            "Workflow Source Code": "15.json",
+            "Failed Stage": "Bottom outpainting",
+            "Execution Plan": "complete_image_batch/tasks/082_man_image_extension/plan.json",
+            "Run Manifest": "complete_image_batch/tasks/082_man_image_extension/run_manifest.json"
+        },
+        "Failure Evidence": {
+            "Generated Output": "complete_image_batch/tasks/082_man_image_extension/output_01_node_176_images.png",
+            "Verifier Result": "Fail",
+            "Observed Failure": "The canvas was extended, but the new bottom region was a featureless gray area rather than a completed person.",
+            "Evaluation Record": "complete_image_batch/comfybench_evaluation/outcome_full/result.json#082"
+        },
+        "Root Cause": "The extended region was padded but was not correctly included in a generative outpainting mask and conditioning path.",
+        "Workflow Antipattern": "Treating canvas extension as successful outpainting without checking that the padded region was synthesized.",
+        "Remedy": "Create an explicit bottom-only generation mask with overlap into the original image, run masked latent generation with body-completion context, blend the seam, and reject flat padded regions.",
+        "Applicable Scope": "Directional outpainting where the added area must synthesize semantically continuous subject content."
+    },
+    "10": {
+        "Failure ID": "F010",
+        "Pattern ID": "P07-Multistage-Constraint-Loss",
+        "Task ID": "119",
+        "Task Name": "grassland_style_cloning_and_repaint",
+        "Workflow ID": "26",
+        "Modality": "I2I",
+        "Capability Category": "Reference-Guided Generation",
+        "Failure Context": {
+            "Task Objective": "Generate a grassland guided by a reference grassland and then convert it to an oil painting.",
+            "Source Input": "large_grassland.png",
+            "Selected Attempt": 1,
+            "Critical Constraints": "Preserve recognizable reference style and structure across both stages while applying oil-painting appearance."
+        },
+        "Failed Workflow": {
+            "Workflow Name": "Style_Guided_Generation_With_Repainting",
+            "Workflow Source Code": "26.json",
+            "Failed Stage": "Reference-guided generation before/through repainting",
+            "Execution Plan": "complete_image_batch/tasks/119_grassland_style_cloning_and_repaint/plan.json",
+            "Run Manifest": "complete_image_batch/tasks/119_grassland_style_cloning_and_repaint/run_manifest.json"
+        },
+        "Failure Evidence": {
+            "Generated Output": "complete_image_batch/tasks/119_grassland_style_cloning_and_repaint/output_01_node_57_images.png",
+            "Verifier Result": "Fail",
+            "Observed Failure": "Oil-painting conversion succeeded, but people, buildings, trees, sky, and overall reference structure were not retained.",
+            "Evaluation Record": "complete_image_batch/comfybench_evaluation/outcome_full/result.json#119"
+        },
+        "Root Cause": "The later repainting objective dominated and the workflow did not preserve reference-derived constraints across stages.",
+        "Workflow Antipattern": "Validating only the final artistic style in a multistage pipeline while allowing the reference-guided intermediate result to drift.",
+        "Remedy": "Validate the reference-guided intermediate image first, carry structural/reference conditioning into the repaint stage, and reduce denoising or transformation strength when content preservation is required.",
+        "Applicable Scope": "Multistage I2I workflows combining reference-guided generation with repainting, restyling, or enhancement."
+    },
+    "11": {
+        "Failure ID": "F011",
+        "Pattern ID": "P03-Reference-Content-Leakage",
+        "Task ID": "145",
+        "Task Name": "castle_style_cloning_and_scene_enhancement",
+        "Workflow ID": "24",
+        "Modality": "I2I",
+        "Capability Category": "Reference-Guided Generation",
+        "Failure Context": {
+            "Task Objective": "Generate a church in the architectural style of a reference castle, then place it against mountains.",
+            "Source Input": "large_castle.png",
+            "Selected Attempt": 1,
+            "Critical Constraints": "The main structure must be a church, not a castle; the mountain background must also be present."
+        },
+        "Failed Workflow": {
+            "Workflow Name": "Style_Guided_Generation_With_Scene_Replacement",
+            "Workflow Source Code": "24.json",
+            "Failed Stage": "Style-guided target generation before background replacement",
+            "Execution Plan": "complete_image_batch/tasks/145_castle_style_cloning_and_scene_enhancement/plan.json",
+            "Run Manifest": "complete_image_batch/tasks/145_castle_style_cloning_and_scene_enhancement/run_manifest.json"
+        },
+        "Failure Evidence": {
+            "Generated Output": "complete_image_batch/tasks/145_castle_style_cloning_and_scene_enhancement/output_01_node_57_images.png",
+            "Verifier Result": "Fail",
+            "Observed Failure": "The mountain replacement succeeded, but the main building remained a castle rather than a church.",
+            "Evaluation Record": "complete_image_batch/comfybench_evaluation/outcome_full/result.json#145"
+        },
+        "Root Cause": "Source semantic identity leaked through style conditioning, and the later background stage could not correct the failed target-object conversion.",
+        "Workflow Antipattern": "Continuing a multistage workflow after the first stage failed its target-class requirement.",
+        "Remedy": "Disentangle style from source content, verify church identity after the first stage, retry that stage if needed, and only then perform background replacement.",
+        "Applicable Scope": "Reference-style transfer followed by scene replacement when the source and target object categories differ."
+    },
+    "12": {
+        "Failure ID": "F012",
+        "Pattern ID": "P08-Ambiguous-Transformation-Semantics",
+        "Task ID": "147",
+        "Task Name": "man_portrait_conversion_and_scene_enhancement",
+        "Workflow ID": "41",
+        "Modality": "I2I",
+        "Capability Category": "Image Restoration & Refinement",
+        "Failure Context": {
+            "Task Objective": "Convert the reference photograph into a portrait and replace its background with a snowy forest.",
+            "Source Input": "president_trump.jpg",
+            "Selected Attempt": 1,
+            "Critical Constraints": "The subject identity and details must remain recognizable while the image becomes an artistic portrait."
+        },
+        "Failed Workflow": {
+            "Workflow Name": "Portrait_Beautification_With_Scene_Replacement",
+            "Workflow Source Code": "41.json",
+            "Failed Stage": "Portrait-style conversion",
+            "Execution Plan": "complete_image_batch/tasks/147_man_portrait_conversion_and_scene_enhancement/plan.json",
+            "Run Manifest": "complete_image_batch/tasks/147_man_portrait_conversion_and_scene_enhancement/run_manifest.json"
+        },
+        "Failure Evidence": {
+            "Generated Output": "complete_image_batch/tasks/147_man_portrait_conversion_and_scene_enhancement/output_01_node_188_images.png",
+            "Verifier Result": "Fail",
+            "Observed Failure": "The snowy forest background succeeded, but the subject retained a photographic rather than artistic portrait appearance.",
+            "Evaluation Record": "complete_image_batch/comfybench_evaluation/outcome_full/result.json#147"
+        },
+        "Root Cause": "The word 'portrait' was interpreted as photographic framing instead of an artistic rendering, and the workflow emphasized preservation and background editing.",
+        "Workflow Antipattern": "Using an underspecified style term for a transformation whose success depends on a visually distinct medium.",
+        "Remedy": "Specify the intended portrait medium and visual traits explicitly, apply a dedicated stylization stage with identity preservation, and verify both identity and medium separately.",
+        "Applicable Scope": "I2I transformations involving ambiguous terms such as portrait, cinematic, artistic, realistic, or beautified."
+    },
+    "13": {
+        "Failure ID": "F013",
+        "Pattern ID": "P07-Multistage-Constraint-Loss",
+        "Task ID": "151",
+        "Task Name": "stream_train_removal_and_content_cloning",
+        "Workflow ID": "36",
+        "Modality": "I2I",
+        "Capability Category": "Localized Image Editing",
+        "Failure Context": {
+            "Task Objective": "Remove a train from a mountain-stream reference and generate a new image following the reference content.",
+            "Source Input": "mountain_stream.png",
+            "Selected Attempt": 1,
+            "Critical Constraints": "The train must be absent and the new scene must preserve the reference landscape, vegetation, and composition."
+        },
+        "Failed Workflow": {
+            "Workflow Name": "Scene_Detail_Removal_With_Style_Guided_Generation",
+            "Workflow Source Code": "36.json",
+            "Failed Stage": "Content-guided generation after removal",
+            "Execution Plan": "complete_image_batch/tasks/151_stream_train_removal_and_content_cloning/plan.json",
+            "Run Manifest": "complete_image_batch/tasks/151_stream_train_removal_and_content_cloning/run_manifest.json"
+        },
+        "Failure Evidence": {
+            "Generated Output": "complete_image_batch/tasks/151_stream_train_removal_and_content_cloning/output_01_node_204_images.png",
+            "Verifier Result": "Fail",
+            "Observed Failure": "Train removal succeeded, but the generated landscape, vegetation, and overall structure diverged from the reference.",
+            "Evaluation Record": "complete_image_batch/comfybench_evaluation/outcome_full/result.json#151"
+        },
+        "Root Cause": "The second stage treated the edited image as a loose style cue and discarded structural content that should have remained constrained.",
+        "Workflow Antipattern": "Equating content cloning with style similarity and failing to validate the intermediate-to-final structural relationship.",
+        "Remedy": "Use the successfully edited image as a structural reference, retain layout or edge/depth conditioning in the second stage, and verify content similarity independently from image quality.",
+        "Applicable Scope": "Multistage removal followed by content cloning or reference-guided regeneration."
+    },
+    "14": {
+        "Failure ID": "F014",
+        "Pattern ID": "P07-Multistage-Constraint-Loss",
+        "Task ID": "152",
+        "Task Name": "table_fork_removal_and_content_cloning",
+        "Workflow ID": "36",
+        "Modality": "I2I",
+        "Capability Category": "Localized Image Editing",
+        "Failure Context": {
+            "Task Objective": "Remove a fork from a dining-table reference and generate a new table image following its content.",
+            "Source Input": "dish_table.png",
+            "Selected Attempt": 2,
+            "Critical Constraints": "The fork must be absent, the table content and composition must remain recognizable, and output resolution must be 1024x1024."
+        },
+        "Failed Workflow": {
+            "Workflow Name": "Scene_Detail_Removal_With_Style_Guided_Generation",
+            "Workflow Source Code": "36.json",
+            "Failed Stage": "Removal and content-guided generation after retry",
+            "Execution Plan": "complete_image_batch/tasks/152_table_fork_removal_and_content_cloning/plan.json",
+            "Run Manifest": "complete_image_batch/tasks/152_table_fork_removal_and_content_cloning/run_manifest.json"
+        },
+        "Failure Evidence": {
+            "Generated Output": "complete_image_batch/tasks/152_table_fork_removal_and_content_cloning/retry_01/output_01_node_204_images.png",
+            "Verifier Result": "Fail",
+            "Observed Failure": "The fork remained, the dishes and composition changed substantially, and the result was 512x512 rather than 1024x1024.",
+            "Evaluation Record": "complete_image_batch/comfybench_evaluation/outcome_full/result.json#152"
+        },
+        "Root Cause": "Multiple constraints failed across stages: the small object was not localized, reference structure was not retained, and final dimensions were not asserted.",
+        "Workflow Antipattern": "Executing a cascade without stage-specific acceptance checks, allowing an early removal failure and a later resolution error to accumulate.",
+        "Remedy": "Use a fork mask and verify removal first; condition the second stage on reference structure; explicitly set and assert final dimensions before saving.",
+        "Applicable Scope": "Complex I2I workflows combining small-object removal, content cloning, and fixed-resolution output."
+    },
+    "15": {
+        "Failure ID": "F015",
+        "Pattern ID": "P07-Multistage-Constraint-Loss",
+        "Task ID": "153",
+        "Task Name": "beach_generation_and_style_cloning",
+        "Workflow ID": "27",
+        "Modality": "T2I",
+        "Capability Category": "Photorealistic Generation",
+        "Failure Context": {
+            "Task Objective": "Generate a beach sunset, then use only its style to generate a distinct mountain sunset.",
+            "Source Input": null,
+            "Selected Attempt": 1,
+            "Critical Constraints": "The final result must be a mountain sunset rather than a beach scene or a merged beach-mountain composition."
+        },
+        "Failed Workflow": {
+            "Workflow Name": "Style_Cloning_Generation",
+            "Workflow Source Code": "27.json",
+            "Failed Stage": "Second-stage style cloning",
+            "Execution Plan": "complete_image_batch/tasks/153_beach_generation_and_style_cloning/plan.json",
+            "Run Manifest": "complete_image_batch/tasks/153_beach_generation_and_style_cloning/run_manifest.json"
+        },
+        "Failure Evidence": {
+            "Generated Output": "complete_image_batch/tasks/153_beach_generation_and_style_cloning/output_01_node_79_images.png",
+            "Verifier Result": "Fail",
+            "Observed Failure": "The final image merged beach and mountain content instead of producing a distinct mountain-sunset image.",
+            "Evaluation Record": "complete_image_batch/comfybench_evaluation/outcome_full/result.json#153"
+        },
+        "Root Cause": "The second-stage reference passed semantic content from the first scene together with its style.",
+        "Workflow Antipattern": "Using a full generated image as a style condition without suppressing its scene content or verifying the requested target scene.",
+        "Remedy": "Extract or encode style separately, strengthen mountain-only target conditioning with beach exclusions, and verify that the final output contains the target scene without source-scene leakage.",
+        "Applicable Scope": "Sequential T2I style cloning where the first and second scene categories must differ."
+    },
+    "16": {
+        "Failure ID": "F016",
+        "Pattern ID": "P06-Outpainting-Fill-Or-Dimension-Failure",
+        "Task ID": "155",
+        "Task Name": "grassland_style_cloning_and_image_extension",
+        "Workflow ID": "15",
+        "Modality": "I2I",
+        "Capability Category": "Image Outpainting",
+        "Failure Context": {
+            "Task Objective": "Generate a grassland following the reference style, then extend it by 128 pixels on both left and right sides.",
+            "Source Input": "large_grassland.png",
+            "Selected Attempt": 1,
+            "Critical Constraints": "Preserve the reference style and produce the exact requested width increase without changing height unexpectedly."
+        },
+        "Failed Workflow": {
+            "Workflow Name": "Image_Outpainting",
+            "Workflow Source Code": "15.json",
+            "Failed Stage": "Style-guided generation and bilateral outpainting",
+            "Execution Plan": "complete_image_batch/tasks/155_grassland_style_cloning_and_image_extension/plan.json",
+            "Run Manifest": "complete_image_batch/tasks/155_grassland_style_cloning_and_image_extension/run_manifest.json"
+        },
+        "Failure Evidence": {
+            "Generated Output": "complete_image_batch/tasks/155_grassland_style_cloning_and_image_extension/output_01_node_176_images.png",
+            "Verifier Result": "Fail",
+            "Observed Failure": "Reference style and content drifted, and the 752x496 output did not match the expected 756-pixel width or original height.",
+            "Evaluation Record": "complete_image_batch/comfybench_evaluation/outcome_full/result.json#155"
+        },
+        "Root Cause": "The workflow combined a weakly constrained style-generation stage with latent-size quantization that silently altered the requested dimensions.",
+        "Workflow Antipattern": "Assuming latent-compatible dimensions are equivalent to exact user-requested dimensions and performing outpainting before validating the intermediate reference match.",
+        "Remedy": "Validate the style-guided intermediate image, calculate padding explicitly, generate at compatible dimensions if necessary, then crop or pad deterministically to the exact target size and assert width/height.",
+        "Applicable Scope": "Outpainting with non-model-multiple pixel increments or with a preceding reference-guided generation stage."
+    },
+    "17": {
+        "Failure ID": "F017",
+        "Pattern ID": "P06-Outpainting-Fill-Or-Dimension-Failure",
+        "Task ID": "157",
+        "Task Name": "street_car_replacement_and_image_extension",
+        "Workflow ID": "15",
+        "Modality": "I2I",
+        "Capability Category": "Image Outpainting",
+        "Failure Context": {
+            "Task Objective": "Replace a red car with a green car and extend the image by 128 pixels on both sides.",
+            "Source Input": "street_car.png",
+            "Selected Attempt": 2,
+            "Critical Constraints": "The car must be green and the final width must equal the original width plus 256 pixels."
+        },
+        "Failed Workflow": {
+            "Workflow Name": "Image_Outpainting",
+            "Workflow Source Code": "15.json",
+            "Failed Stage": "Bilateral outpainting after successful color replacement",
+            "Execution Plan": "complete_image_batch/tasks/157_street_car_replacement_and_image_extension/plan.json",
+            "Run Manifest": "complete_image_batch/tasks/157_street_car_replacement_and_image_extension/run_manifest.json"
+        },
+        "Failure Evidence": {
+            "Generated Output": "complete_image_batch/tasks/157_street_car_replacement_and_image_extension/retry_01/output_01_node_176_images.png",
+            "Verifier Result": "Fail",
+            "Observed Failure": "Car replacement succeeded, but the 752x496 output did not reflect an exact 128-pixel extension on each side.",
+            "Evaluation Record": "complete_image_batch/comfybench_evaluation/outcome_full/result.json#157"
+        },
+        "Root Cause": "The workflow quantized or resized the canvas instead of preserving the requested exact outpainting geometry.",
+        "Workflow Antipattern": "Accepting semantic success from an earlier stage while omitting a deterministic final-dimension assertion.",
+        "Remedy": "Compute the exact target canvas, maintain side-specific masks, and add a final deterministic crop/pad plus width/height assertion after generation.",
+        "Applicable Scope": "Multistage I2I tasks with exact left/right/top/bottom pixel extension requirements."
+    },
+    "18": {
+        "Failure ID": "F018",
+        "Pattern ID": "P09-Diffusion-Only-Exact-Text-Rendering",
+        "Task ID": "174",
+        "Task Name": "handwritten_letter_generation",
+        "Workflow ID": "8",
+        "Modality": "T2I",
+        "Capability Category": "In-Image Text Generation",
+        "Failure Context": {
+            "Task Objective": "Generate a handwritten love letter addressed to 'My Darling' and signed 'Juliet' with readable, coherent body text.",
+            "Source Input": null,
+            "Selected Attempt": 1,
+            "Critical Constraints": "Address, signature, and the full love-and-longing message must be readable and semantically coherent."
+        },
+        "Failed Workflow": {
+            "Workflow Name": "Complex_Text_Image_Generation",
+            "Workflow Source Code": "8.json",
+            "Failed Stage": "Long-form in-image text rendering",
+            "Execution Plan": "complete_image_batch/tasks/174_handwritten_letter_generation/plan.json",
+            "Run Manifest": "complete_image_batch/tasks/174_handwritten_letter_generation/run_manifest.json"
+        },
+        "Failure Evidence": {
+            "Generated Output": "complete_image_batch/tasks/174_handwritten_letter_generation/output_01_node_129_images.png",
+            "Verifier Result": "Fail",
+            "Observed Failure": "The address and signature were present, but much of the body text was garbled, nonsensical, or unreadable.",
+            "Evaluation Record": "complete_image_batch/comfybench_evaluation/outcome_full/result.json#174"
+        },
+        "Root Cause": "A diffusion-only image generator was asked to render long, exact, semantically coherent handwriting beyond its reliable text capacity.",
+        "Workflow Antipattern": "Treating long-form exact text as a purely visual texture and omitting OCR or semantic text verification.",
+        "Remedy": "Generate the paper and handwriting style separately, render the exact letter with a deterministic text or handwriting engine, composite it into the image, and verify all text with OCR before acceptance.",
+        "Applicable Scope": "Posters, letters, menus, documents, signs, or any image requiring long exact and readable text."
+    }
+}

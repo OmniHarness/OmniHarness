@@ -1,0 +1,1110 @@
+{
+  "abnormal_hands": {
+    "image_id": "abnormal_hands",
+    "path": "images/abnormal_hands.png",
+    "width": 512,
+    "height": 768,
+    "format": "png",
+    "caption": "An AI-generated young girl raising her hands, with visible anatomical defects in the hands.",
+    "semantic_tags": [
+      "abnormal",
+      "anatomical",
+      "defects",
+      "generated",
+      "girl",
+      "hands",
+      "her",
+      "raising",
+      "young"
+    ],
+    "quality_flags": [
+      "ai_generated",
+      "anatomical_defect"
+    ],
+    "applicable_capabilities": [
+      "Image Restoration & Refinement"
+    ],
+    "sha256": "17ca71c061a8fe8d261006903c960c125ff7fbed33a01a00c6dd7e2407a54abc",
+    "size_bytes": 544807,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/abnormal_hands.png",
+    "source_task_ids": [
+      "161"
+    ],
+    "i2i_task_ids": [
+      "161"
+    ]
+  },
+  "bareheaded_man": {
+    "image_id": "bareheaded_man",
+    "path": "images/bareheaded_man.png",
+    "width": 800,
+    "height": 800,
+    "format": "png",
+    "caption": "A portrait photograph of a bareheaded man.",
+    "semantic_tags": [
+      "bareheaded",
+      "man",
+      "portrait"
+    ],
+    "quality_flags": [],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting"
+    ],
+    "sha256": "07d6c18a83692ec207be14cb11c5f986906303f49587c6538b1e007df039dcba",
+    "size_bytes": 886729,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/bareheaded_man.png",
+    "source_task_ids": [
+      "094",
+      "175"
+    ],
+    "i2i_task_ids": [
+      "094",
+      "175"
+    ]
+  },
+  "budapest_city": {
+    "image_id": "budapest_city",
+    "path": "images/budapest_city.jpg",
+    "width": 768,
+    "height": 768,
+    "format": "jpg",
+    "caption": "A cityscape photograph of Budapest.",
+    "semantic_tags": [
+      "budapest",
+      "city",
+      "cityscape"
+    ],
+    "quality_flags": [],
+    "applicable_capabilities": [
+      "Image Outpainting"
+    ],
+    "sha256": "79538bbb8d7aee4bfb35ae768982b0d5b835728d5f563f71bb22368d638b584b",
+    "size_bytes": 256657,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/budapest_city.jpg",
+    "source_task_ids": [
+      "049",
+      "081",
+      "114"
+    ],
+    "i2i_task_ids": [
+      "081"
+    ]
+  },
+  "chinese_calligraphy": {
+    "image_id": "chinese_calligraphy",
+    "path": "images/chinese_calligraphy.jpg",
+    "width": 400,
+    "height": 400,
+    "format": "jpg",
+    "caption": "A photograph of traditional Chinese calligraphy.",
+    "semantic_tags": [
+      "calligraphy",
+      "chinese",
+      "traditional"
+    ],
+    "quality_flags": [
+      "low_resolution"
+    ],
+    "applicable_capabilities": [
+      "Image Restoration & Refinement",
+      "Style Transfer & Repainting"
+    ],
+    "sha256": "dbfeb4d2355a919d4d8cf099b545c75ef8c260188b253bdf044239f8ca5494d9",
+    "size_bytes": 11043,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/chinese_calligraphy.jpg",
+    "source_task_ids": [
+      "096"
+    ],
+    "i2i_task_ids": [
+      "096"
+    ]
+  },
+  "colorful_logo": {
+    "image_id": "colorful_logo",
+    "path": "images/colorful_logo.png",
+    "width": 542,
+    "height": 542,
+    "format": "png",
+    "caption": "A colorful sample logo depicting a bird.",
+    "semantic_tags": [
+      "bird",
+      "colorful",
+      "depicting",
+      "logo",
+      "sample"
+    ],
+    "quality_flags": [],
+    "applicable_capabilities": [
+      "Image Restoration & Refinement",
+      "Style Transfer & Repainting"
+    ],
+    "sha256": "cd785fe4ad52594e5e2787b643ee1222415b301d44a477074402a3aceaf1a0b5",
+    "size_bytes": 112683,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/colorful_logo.png",
+    "source_task_ids": [
+      "095",
+      "150"
+    ],
+    "i2i_task_ids": [
+      "095",
+      "150"
+    ]
+  },
+  "cosmetic_product": {
+    "image_id": "cosmetic_product",
+    "path": "images/cosmetic_product.jpg",
+    "width": 658,
+    "height": 979,
+    "format": "jpg",
+    "caption": "Two cosmetic product bottles illuminated by soft yellow light.",
+    "semantic_tags": [
+      "bottles",
+      "cosmetic",
+      "illuminated",
+      "light",
+      "product",
+      "two",
+      "yellow"
+    ],
+    "quality_flags": [],
+    "applicable_capabilities": [
+      "Localized Image Editing"
+    ],
+    "sha256": "d57684eb91e81573cf42ef0415cc8e7a09c2d58a587ab55a70808b855a1ff2c0",
+    "size_bytes": 107431,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/cosmetic_product.jpg",
+    "source_task_ids": [
+      "171"
+    ],
+    "i2i_task_ids": [
+      "171"
+    ]
+  },
+  "dish_table": {
+    "image_id": "dish_table",
+    "path": "images/dish_table.png",
+    "width": 500,
+    "height": 500,
+    "format": "png",
+    "caption": "A crowded dining table filled with plates, food, utensils, and glasses.",
+    "semantic_tags": [
+      "crowded",
+      "dining",
+      "dish",
+      "filled",
+      "food",
+      "glasses",
+      "plates",
+      "table",
+      "utensils"
+    ],
+    "quality_flags": [
+      "low_resolution"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting"
+    ],
+    "sha256": "5db0d279451fb04e45ed07b8175f3e31efc00865814e8cb6d22bd41242f00e4e",
+    "size_bytes": 508076,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/dish_table.png",
+    "source_task_ids": [
+      "060",
+      "061",
+      "062",
+      "063",
+      "064",
+      "121",
+      "124",
+      "152"
+    ],
+    "i2i_task_ids": [
+      "060",
+      "061",
+      "062",
+      "063",
+      "064",
+      "121",
+      "124",
+      "152"
+    ]
+  },
+  "elon_musk": {
+    "image_id": "elon_musk",
+    "path": "images/elon_musk.jpg",
+    "width": 474,
+    "height": 565,
+    "format": "jpg",
+    "caption": "A portrait photograph of Elon Musk.",
+    "semantic_tags": [
+      "elon",
+      "musk",
+      "portrait"
+    ],
+    "quality_flags": [
+      "low_resolution"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing"
+    ],
+    "sha256": "6736b21042299eb8ce62cb460def6a9f3158e4054012f23393baaa07b11e7388",
+    "size_bytes": 24530,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/elon_musk.jpg",
+    "source_task_ids": [
+      "168"
+    ],
+    "i2i_task_ids": [
+      "168"
+    ]
+  },
+  "flower_scribble": {
+    "image_id": "flower_scribble",
+    "path": "images/flower_scribble.jpg",
+    "width": 835,
+    "height": 960,
+    "format": "jpg",
+    "caption": "A simple scribble drawing of a flower.",
+    "semantic_tags": [
+      "drawing",
+      "flower",
+      "scribble",
+      "simple"
+    ],
+    "quality_flags": [
+      "scribble"
+    ],
+    "applicable_capabilities": [
+      "Style Transfer & Repainting"
+    ],
+    "sha256": "09cbad214f41bda502db3fde8c7cfd2dab16dcdbc80e88bf992290e888d86419",
+    "size_bytes": 37694,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/flower_scribble.jpg",
+    "source_task_ids": [
+      "091",
+      "154"
+    ],
+    "i2i_task_ids": [
+      "091",
+      "154"
+    ]
+  },
+  "glacier_iceberg": {
+    "image_id": "glacier_iceberg",
+    "path": "images/glacier_iceberg.jpg",
+    "width": 768,
+    "height": 768,
+    "format": "jpg",
+    "caption": "A landscape photograph of a glacier and iceberg.",
+    "semantic_tags": [
+      "glacier",
+      "iceberg",
+      "landscape"
+    ],
+    "quality_flags": [],
+    "applicable_capabilities": [],
+    "sha256": "a0b19109e0e70a047b8c83ac993bd0af235a0c7bbc458818aa59659b9ec98e48",
+    "size_bytes": 129880,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/glacier_iceberg.jpg",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "jacket_man": {
+    "image_id": "jacket_man",
+    "path": "images/jacket_man.jpg",
+    "width": 800,
+    "height": 800,
+    "format": "jpg",
+    "caption": "A man standing and wearing a jacket.",
+    "semantic_tags": [
+      "jacket",
+      "man",
+      "standing",
+      "wearing"
+    ],
+    "quality_flags": [],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Reference-Guided Generation"
+    ],
+    "sha256": "3d17a63e10cf71d2e9b9405a7128025adc909c42997daa8710e9461e68589041",
+    "size_bytes": 139404,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/jacket_man.jpg",
+    "source_task_ids": [
+      "045",
+      "078",
+      "134",
+      "172"
+    ],
+    "i2i_task_ids": [
+      "078",
+      "172"
+    ]
+  },
+  "large_castle": {
+    "image_id": "large_castle",
+    "path": "images/large_castle.png",
+    "width": 512,
+    "height": 512,
+    "format": "png",
+    "caption": "A photograph of a large historic castle.",
+    "semantic_tags": [
+      "castle",
+      "historic",
+      "large"
+    ],
+    "quality_flags": [],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting"
+    ],
+    "sha256": "33c3c592f80a12a93e4e7f6eb3c42776a9d87b507bb79855506ccb0cefb1e6da",
+    "size_bytes": 331942,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/large_castle.png",
+    "source_task_ids": [
+      "046",
+      "075",
+      "131",
+      "145",
+      "160",
+      "164"
+    ],
+    "i2i_task_ids": [
+      "075",
+      "145",
+      "164"
+    ]
+  },
+  "large_grassland": {
+    "image_id": "large_grassland",
+    "path": "images/large_grassland.png",
+    "width": 500,
+    "height": 500,
+    "format": "png",
+    "caption": "A broad grassland under a clear sky, with a tree in the scene.",
+    "semantic_tags": [
+      "broad",
+      "clear",
+      "grassland",
+      "large",
+      "scene",
+      "sky",
+      "tree"
+    ],
+    "quality_flags": [
+      "low_resolution"
+    ],
+    "applicable_capabilities": [
+      "Image Outpainting",
+      "Localized Image Editing",
+      "Style Transfer & Repainting"
+    ],
+    "sha256": "0bd66d72316835248b7bec9a80df5233568737bd6ec38421d8f9f2c059204e5e",
+    "size_bytes": 268536,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/large_grassland.png",
+    "source_task_ids": [
+      "055",
+      "056",
+      "057",
+      "058",
+      "059",
+      "119",
+      "155"
+    ],
+    "i2i_task_ids": [
+      "055",
+      "056",
+      "057",
+      "058",
+      "059",
+      "119",
+      "155"
+    ]
+  },
+  "lovely_man": {
+    "image_id": "lovely_man",
+    "path": "images/lovely_man.jpg",
+    "width": 690,
+    "height": 1035,
+    "format": "jpg",
+    "caption": "A portrait photograph of a male celebrity.",
+    "semantic_tags": [
+      "celebrity",
+      "lovely",
+      "male",
+      "man",
+      "portrait"
+    ],
+    "quality_flags": [],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Reference-Guided Generation"
+    ],
+    "sha256": "1dc50759ebea8fec1af0e1c9f18870888c354ca68032ef05592c44327d9c2427",
+    "size_bytes": 90285,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/lovely_man.jpg",
+    "source_task_ids": [
+      "170"
+    ],
+    "i2i_task_ids": [
+      "170"
+    ]
+  },
+  "many_people": {
+    "image_id": "many_people",
+    "path": "images/many_people.png",
+    "width": 256,
+    "height": 256,
+    "format": "png",
+    "caption": "A low-resolution photograph of a crowd of people.",
+    "semantic_tags": [
+      "crowd",
+      "low",
+      "many",
+      "people",
+      "resolution"
+    ],
+    "quality_flags": [
+      "low_resolution"
+    ],
+    "applicable_capabilities": [
+      "Image Super-Resolution"
+    ],
+    "sha256": "1520b58484b1d412ff837ed8d0f3db3f3708a99837becb83fd7a27a4e46661ce",
+    "size_bytes": 112262,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/many_people.png",
+    "source_task_ids": [
+      "054",
+      "083"
+    ],
+    "i2i_task_ids": [
+      "083"
+    ]
+  },
+  "marble_statue": {
+    "image_id": "marble_statue",
+    "path": "images/marble_statue.jpg",
+    "width": 512,
+    "height": 512,
+    "format": "jpg",
+    "caption": "A photograph of a classical marble statue.",
+    "semantic_tags": [
+      "classical",
+      "marble",
+      "statue"
+    ],
+    "quality_flags": [],
+    "applicable_capabilities": [],
+    "sha256": "67d42e770e11bae20323ee7dd126ca25704681a2f060d0d9adbe6d610349be9d",
+    "size_bytes": 39307,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/marble_statue.jpg",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "motorbike_man": {
+    "image_id": "motorbike_man",
+    "path": "images/motorbike_man.png",
+    "width": 500,
+    "height": 500,
+    "format": "png",
+    "caption": "A man riding a motorbike on a road.",
+    "semantic_tags": [
+      "man",
+      "motorbike",
+      "riding",
+      "road"
+    ],
+    "quality_flags": [
+      "low_resolution"
+    ],
+    "applicable_capabilities": [],
+    "sha256": "a5d2bed389f389a337330b0a93c6dbee261015d472c6c33cdec715e963dca5a7",
+    "size_bytes": 460730,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/motorbike_man.png",
+    "source_task_ids": [
+      "052"
+    ],
+    "i2i_task_ids": []
+  },
+  "mountain_stream": {
+    "image_id": "mountain_stream",
+    "path": "images/mountain_stream.png",
+    "width": 500,
+    "height": 500,
+    "format": "png",
+    "caption": "A mountain landscape with a stream, rocks, vegetation, and a nearby train.",
+    "semantic_tags": [
+      "landscape",
+      "mountain",
+      "rocks",
+      "stream",
+      "train",
+      "vegetation"
+    ],
+    "quality_flags": [
+      "low_resolution"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting"
+    ],
+    "sha256": "044420fcb14b58215fd8ee10b790ce9825a5c81f0fc9392689452d371caaf93a",
+    "size_bytes": 556838,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/mountain_stream.png",
+    "source_task_ids": [
+      "065",
+      "066",
+      "067",
+      "068",
+      "069",
+      "122",
+      "151"
+    ],
+    "i2i_task_ids": [
+      "065",
+      "066",
+      "067",
+      "068",
+      "069",
+      "122",
+      "151"
+    ]
+  },
+  "old_photo": {
+    "image_id": "old_photo",
+    "path": "images/old_photo.jpg",
+    "width": 905,
+    "height": 1265,
+    "format": "jpg",
+    "caption": "An unclear black-and-white old photograph of a woman.",
+    "semantic_tags": [
+      "black",
+      "old",
+      "unclear",
+      "white",
+      "woman"
+    ],
+    "quality_flags": [
+      "aged",
+      "black_and_white",
+      "low_clarity"
+    ],
+    "applicable_capabilities": [
+      "Image Restoration & Refinement"
+    ],
+    "sha256": "0a038fd96d290a8c25e3b772a038d376ef1f75499f37b2ac572c776b12d4b802",
+    "size_bytes": 354120,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/old_photo.jpg",
+    "source_task_ids": [
+      "162",
+      "194"
+    ],
+    "i2i_task_ids": [
+      "162"
+    ]
+  },
+  "pigeon_scribble": {
+    "image_id": "pigeon_scribble",
+    "path": "images/pigeon_scribble.png",
+    "width": 640,
+    "height": 640,
+    "format": "png",
+    "caption": "A simple scribble drawing of a pigeon.",
+    "semantic_tags": [
+      "drawing",
+      "pigeon",
+      "scribble",
+      "simple"
+    ],
+    "quality_flags": [
+      "scribble"
+    ],
+    "applicable_capabilities": [
+      "Style Transfer & Repainting"
+    ],
+    "sha256": "a3f5e81c7e1fee26294da41841d062a8b33c10c1f37b10a23a1c1016d164a824",
+    "size_bytes": 61390,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/pigeon_scribble.png",
+    "source_task_ids": [
+      "092",
+      "136"
+    ],
+    "i2i_task_ids": [
+      "092"
+    ]
+  },
+  "play_guitar": {
+    "image_id": "play_guitar",
+    "path": "images/play_guitar.jpg",
+    "width": 1200,
+    "height": 800,
+    "format": "jpg",
+    "caption": "A girl playing a guitar in a clearly visible pose.",
+    "semantic_tags": [
+      "girl",
+      "guitar",
+      "play",
+      "playing",
+      "pose"
+    ],
+    "quality_flags": [],
+    "applicable_capabilities": [
+      "Image Outpainting",
+      "Localized Image Editing",
+      "Reference-Guided Generation",
+      "Style Transfer & Repainting"
+    ],
+    "sha256": "535b426bb318ed3f6cddc26980afa29db0573426cddae1d198c5272e4e33d65e",
+    "size_bytes": 86822,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/play_guitar.jpg",
+    "source_task_ids": [
+      "077",
+      "120",
+      "133",
+      "146",
+      "156"
+    ],
+    "i2i_task_ids": [
+      "077",
+      "120",
+      "146",
+      "156"
+    ]
+  },
+  "president_trump": {
+    "image_id": "president_trump",
+    "path": "images/president_trump.jpg",
+    "width": 702,
+    "height": 808,
+    "format": "jpg",
+    "caption": "A portrait photograph of Donald Trump.",
+    "semantic_tags": [
+      "donald",
+      "portrait",
+      "president",
+      "trump"
+    ],
+    "quality_flags": [],
+    "applicable_capabilities": [
+      "Image Restoration & Refinement",
+      "Localized Image Editing",
+      "Style Transfer & Repainting"
+    ],
+    "sha256": "493a3909b4ef58c8d40d7098acb86884aebf693a32518d88aef7f267fede3ec3",
+    "size_bytes": 63556,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/president_trump.jpg",
+    "source_task_ids": [
+      "050",
+      "097",
+      "099",
+      "115",
+      "147",
+      "180",
+      "189"
+    ],
+    "i2i_task_ids": [
+      "097",
+      "099",
+      "147",
+      "180"
+    ]
+  },
+  "red_apple": {
+    "image_id": "red_apple",
+    "path": "images/red_apple.jpg",
+    "width": 474,
+    "height": 474,
+    "format": "jpg",
+    "caption": "A photograph of a red apple.",
+    "semantic_tags": [
+      "apple",
+      "red"
+    ],
+    "quality_flags": [
+      "low_resolution"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing",
+      "Style Transfer & Repainting"
+    ],
+    "sha256": "062410e34417638dbfcffc9c3ec795fccc29e85a52538a11329f778dbdba069d",
+    "size_bytes": 13062,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/red_apple.jpg",
+    "source_task_ids": [
+      "093"
+    ],
+    "i2i_task_ids": [
+      "093"
+    ]
+  },
+  "red_bridge": {
+    "image_id": "red_bridge",
+    "path": "images/red_bridge.jpg",
+    "width": 690,
+    "height": 1034,
+    "format": "jpg",
+    "caption": "A red arched bridge with a person standing on it.",
+    "semantic_tags": [
+      "arched",
+      "bridge",
+      "person",
+      "red",
+      "standing"
+    ],
+    "quality_flags": [],
+    "applicable_capabilities": [
+      "Localized Image Editing"
+    ],
+    "sha256": "a3012c5fcac1d4dcfcaeeb005ab8134cc53b4ebcad90cc39f5c7baff40eade69",
+    "size_bytes": 415274,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/red_bridge.jpg",
+    "source_task_ids": [
+      "176",
+      "181"
+    ],
+    "i2i_task_ids": [
+      "176",
+      "181"
+    ]
+  },
+  "single_letter": {
+    "image_id": "single_letter",
+    "path": "images/single_letter.jpg",
+    "width": 800,
+    "height": 800,
+    "format": "jpg",
+    "caption": "A close-up image containing a single written letter.",
+    "semantic_tags": [
+      "close",
+      "letter",
+      "single",
+      "written"
+    ],
+    "quality_flags": [],
+    "applicable_capabilities": [],
+    "sha256": "c2efb3900c991aea894a2f30a0ee4d79814b4108eca621a9fd3491cbe853172c",
+    "size_bytes": 25604,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/single_letter.jpg",
+    "source_task_ids": [],
+    "i2i_task_ids": []
+  },
+  "standing_cat": {
+    "image_id": "standing_cat",
+    "path": "images/standing_cat.jpg",
+    "width": 640,
+    "height": 389,
+    "format": "jpg",
+    "caption": "A photograph of a standing cat.",
+    "semantic_tags": [
+      "cat",
+      "standing"
+    ],
+    "quality_flags": [
+      "low_resolution"
+    ],
+    "applicable_capabilities": [
+      "Localized Image Editing"
+    ],
+    "sha256": "d2298d3fa679c0ee3bc79e4b867dc6d3f85c32b5d03dd0c3c5c694cecb768bc5",
+    "size_bytes": 16605,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/standing_cat.jpg",
+    "source_task_ids": [
+      "047",
+      "090",
+      "135"
+    ],
+    "i2i_task_ids": [
+      "090"
+    ]
+  },
+  "street_car": {
+    "image_id": "street_car",
+    "path": "images/street_car.png",
+    "width": 500,
+    "height": 500,
+    "format": "png",
+    "caption": "A red car parked on a street with a tree behind it.",
+    "semantic_tags": [
+      "behind",
+      "car",
+      "parked",
+      "red",
+      "street",
+      "tree"
+    ],
+    "quality_flags": [
+      "low_resolution"
+    ],
+    "applicable_capabilities": [
+      "Image Outpainting",
+      "Image Super-Resolution",
+      "Localized Image Editing",
+      "Style Transfer & Repainting"
+    ],
+    "sha256": "77da26a0fb5cf40a92707a654b10d34d24b770ca1ee8668d3c4a62611d74b752",
+    "size_bytes": 456776,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/street_car.png",
+    "source_task_ids": [
+      "051",
+      "070",
+      "071",
+      "072",
+      "073",
+      "074",
+      "108",
+      "116",
+      "123",
+      "157"
+    ],
+    "i2i_task_ids": [
+      "070",
+      "071",
+      "072",
+      "073",
+      "074",
+      "108",
+      "123",
+      "157"
+    ]
+  },
+  "toy_dog": {
+    "image_id": "toy_dog",
+    "path": "images/toy_dog.jpg",
+    "width": 800,
+    "height": 800,
+    "format": "jpg",
+    "caption": "A furry toy dog photographed against its original background.",
+    "semantic_tags": [
+      "background",
+      "dog",
+      "furry",
+      "photographed",
+      "toy"
+    ],
+    "quality_flags": [],
+    "applicable_capabilities": [
+      "Localized Image Editing"
+    ],
+    "sha256": "c1290889b6cbde516e74de290f4e8cfa42b7c130b5b457001bedfd5218ac398d",
+    "size_bytes": 179025,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/toy_dog.jpg",
+    "source_task_ids": [
+      "089",
+      "165"
+    ],
+    "i2i_task_ids": [
+      "089",
+      "165"
+    ]
+  },
+  "warm_bedroom": {
+    "image_id": "warm_bedroom",
+    "path": "images/warm_bedroom.jpg",
+    "width": 474,
+    "height": 474,
+    "format": "jpg",
+    "caption": "A bedroom interior with warm lighting and soft decoration.",
+    "semantic_tags": [
+      "bedroom",
+      "decoration",
+      "interior",
+      "lighting",
+      "warm"
+    ],
+    "quality_flags": [
+      "low_resolution"
+    ],
+    "applicable_capabilities": [
+      "Image Outpainting",
+      "Image Super-Resolution",
+      "Style Transfer & Repainting"
+    ],
+    "sha256": "854a9ad08b7b7ca6772fd8b8c37f47f0619585380d6c50092a3ad7f255a0fcb6",
+    "size_bytes": 44152,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/warm_bedroom.jpg",
+    "source_task_ids": [
+      "048",
+      "076",
+      "084",
+      "107",
+      "132",
+      "192"
+    ],
+    "i2i_task_ids": [
+      "076",
+      "084",
+      "107"
+    ]
+  },
+  "watermarked_photo": {
+    "image_id": "watermarked_photo",
+    "path": "images/watermarked_photo.png",
+    "width": 1050,
+    "height": 600,
+    "format": "png",
+    "caption": "A landscape of mountains and rivers with a visible watermark in the bottom-right corner.",
+    "semantic_tags": [
+      "bottom",
+      "corner",
+      "landscape",
+      "mountains",
+      "right",
+      "rivers",
+      "watermark",
+      "watermarked"
+    ],
+    "quality_flags": [
+      "watermark_present"
+    ],
+    "applicable_capabilities": [
+      "Image Restoration & Refinement",
+      "Localized Image Editing"
+    ],
+    "sha256": "f813de654a64d09c196ed05cf41c3d305d225b11074d083e7dd32c6d6a5f4cc0",
+    "size_bytes": 1503854,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/watermarked_photo.png",
+    "source_task_ids": [
+      "179"
+    ],
+    "i2i_task_ids": [
+      "179"
+    ]
+  },
+  "woman_photo": {
+    "image_id": "woman_photo",
+    "path": "images/woman_photo.jpg",
+    "width": 512,
+    "height": 512,
+    "format": "jpg",
+    "caption": "A portrait photograph of a smiling woman.",
+    "semantic_tags": [
+      "portrait",
+      "smiling",
+      "woman"
+    ],
+    "quality_flags": [],
+    "applicable_capabilities": [
+      "Image Outpainting",
+      "Image Restoration & Refinement",
+      "Image Super-Resolution",
+      "Localized Image Editing",
+      "Style Transfer & Repainting"
+    ],
+    "sha256": "18eae73ddd9e907b4b1b223ce96ed6cec6e61642ad1890cccf78405fd91fa2ad",
+    "size_bytes": 42242,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/woman_photo.jpg",
+    "source_task_ids": [
+      "098",
+      "100",
+      "109",
+      "110",
+      "137",
+      "138",
+      "148",
+      "158",
+      "159"
+    ],
+    "i2i_task_ids": [
+      "098",
+      "100",
+      "109",
+      "110",
+      "148",
+      "158",
+      "159"
+    ]
+  },
+  "yellow_race": {
+    "image_id": "yellow_race",
+    "path": "images/yellow_race.png",
+    "width": 1024,
+    "height": 1024,
+    "format": "png",
+    "caption": "A portrait photograph of an Asian man.",
+    "semantic_tags": [
+      "asian",
+      "man",
+      "portrait",
+      "race",
+      "yellow"
+    ],
+    "quality_flags": [],
+    "applicable_capabilities": [
+      "Localized Image Editing"
+    ],
+    "sha256": "e3142218f7a4a8aa8167318d8cc6dcd15c646365e2d660f1d9b97d1fae0436aa",
+    "size_bytes": 1080718,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/yellow_race.png",
+    "source_task_ids": [
+      "166"
+    ],
+    "i2i_task_ids": [
+      "166"
+    ]
+  },
+  "young_man": {
+    "image_id": "young_man",
+    "path": "images/young_man.jpg",
+    "width": 496,
+    "height": 443,
+    "format": "jpg",
+    "caption": "A portrait photograph of a young man.",
+    "semantic_tags": [
+      "man",
+      "portrait",
+      "young"
+    ],
+    "quality_flags": [
+      "low_resolution"
+    ],
+    "applicable_capabilities": [
+      "Image Outpainting",
+      "Reference-Guided Generation"
+    ],
+    "sha256": "b61ca5f579f3d8aafb2a35526660ce7536a9d985b270d13512b9573621509d94",
+    "size_bytes": 23179,
+    "source_dataset": "ComfyBench",
+    "source_relative_path": "resource/young_man.jpg",
+    "source_task_ids": [
+      "053",
+      "082",
+      "173"
+    ],
+    "i2i_task_ids": [
+      "082",
+      "173"
+    ]
+  }
+}
