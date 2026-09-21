@@ -15,7 +15,10 @@ The documentation accompanies the
 
 The copied catalog has SHA-256
 `dc24f759fd0af1bd40112e325795da34be3d06d4fb5af2f2bd93b86fd7076af8`.
-The corpus contains 3,412 files totaling 15,382,768 bytes.
+The corpus contains 3,412 files totaling 15,382,777 bytes.
+
+The `SaltGeneralJSONAPI` example uses a reserved `.example` host in place
+of the upstream snapshot's concrete demo-server IP address.
 
 This material is reference data only. OmniHarness validates executable graphs
 against the live ComfyUI `/object_info` endpoint, which remains authoritative

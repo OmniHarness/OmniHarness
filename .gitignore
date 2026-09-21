@@ -8,13 +8,30 @@ dist/
 .venv/
 venv/
 
+# Tool caches and local coverage reports
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
 # Credentials and machine-local Codex configuration
 .env
 .env.*
+!.env.example
 config.yaml
 config.local.yaml
+config.*.yaml
+!config.example.yaml
 *.pem
 *.key
+*.p12
+*.pfx
+credentials.json
 auth.json
 .codex/
 
@@ -27,6 +44,8 @@ proposal_audit.jsonl
 resources/symbolic_policy/.omniharness_state.json
 resources/symbolic_policy/.omniharness.lock
 *.tmp
+*.log
+*.log.*
 
 # Local third-party benchmark material
 # These files remain available to local experiments but are intentionally kept
@@ -42,3 +61,8 @@ resources/source_image_pool_gpt/images/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Editor recovery files
+*.swp
+*.swo
+*~

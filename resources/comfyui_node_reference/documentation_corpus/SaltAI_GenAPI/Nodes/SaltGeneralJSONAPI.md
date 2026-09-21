@@ -70,7 +70,7 @@ class SaltGeneralJSONAPI:
         return {
             "required": {
                 "preset": (["Salt AI Ollama",],), # Mock Placeholder for Presets
-                "api_base": ("STRING", {"default": "http://35.193.61.202:11434/api/generate"}), #placeholder address, need JS presets
+                "api_base": ("STRING", {"default": "https://YOUR_API_HOST.example:11434/api/generate"}), #placeholder address, need JS presets
                 "optional_user_agent": ("STRING", {"default": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}),
                 "optional_api_key": ("STRING", {"default": ""}),
                 "request": ("STRING", {"multiline": True, "dynamicPrompts": False, "default": """{
