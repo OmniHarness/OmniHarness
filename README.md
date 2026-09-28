@@ -127,8 +127,8 @@ Edit `config.yaml`:
 
 ```yaml
 codex:
-  model: gpt-4o
-  provider: omniharness_gpt4o
+  model: gpt-5.6
+  provider: omniharness_gpt56
   base_url: https://YOUR_PROVIDER.example/v1
   api_key_env: OMNIHARNESS_API_KEY
   reasoning_effort: null
